@@ -98,3 +98,5 @@ Robust
 ### FreeRTOS Founder
 >
 The FreeRTOS project was founded by Richard Barry. Richard graduated with 1st Class Honours in Computing for Real Time Systems. He's been directly involved in the start up of several companies, primarily working in the industrial automation and aerospace and simulation markets. Richard is currently a director of Real Time Engineers Ltd., owners and maintainers of the FreeRTOS project.
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
