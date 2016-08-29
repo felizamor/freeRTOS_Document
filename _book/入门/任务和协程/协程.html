@@ -17,7 +17,7 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prismx/prism.css">
                 
             
                 
@@ -358,6 +358,38 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4" data-path="../../进阶/readme.md">
+            
+                <span>
+            
+                    
+                    进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../进阶/源代码组织结构/源代码组织结构.html">
+            
+                <a href="../../进阶/源代码组织结构/源代码组织结构.html">
+            
+                    
+                    源代码组织结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -408,123 +440,123 @@
 <li><p>&#x5C31;&#x7EEA;&#x6001;
 &#x4E0E;&#x4EFB;&#x52A1;&#x7684;&#x5C31;&#x7EEA;&#x6001;&#x610F;&#x4E49;&#x76F8;&#x540C;&#xFF0C;&#x4E0D;&#x8FC7;&#x6761;&#x4EF6;&#x4E0D;&#x540C;&#xFF0C;&#x9664;&#x4E86;&#x56E0;&#x4E3A;&#x6B64;&#x65F6;&#x6709;&#x66F4;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x534F;&#x7A0B;&#x5728;&#x8FD0;&#x884C;&#x5BFC;&#x81F4;&#x65E0;&#x6CD5;&#x6267;&#x884C;&#x5916;&#xFF0C;&#x5728;&#x4EFB;&#x52A1;&#x4E0E;&#x534F;&#x7A0B;&#x6DF7;&#x7528;&#x7684;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x5904;&#x5728;&#x8FD0;&#x884C;&#x6001;&#x90FD;&#x4F1A;&#x5BFC;&#x81F4;&#x534F;&#x7A0B;&#x65E0;&#x6CD5;&#x6267;&#x884C;&#x3002;</p></li></ol>
 <p>3.&#x963B;&#x585E;&#x6001;
-&#x4E0E;&#x4EFB;&#x52A1;&#x7C7B;&#x4F3C;&#xFF0C;&#x534F;&#x7A0B;&#x5728;&#x7B49;&#x5F85;&#x65F6;&#x95F4;&#x6216;&#x8005;&#x5916;&#x90E8;&#x4E8B;&#x4EF6;&#xFF0C;&#x4F1A;&#x8FDB;&#x5165;&#x963B;&#x585E;&#x6001;&#xFF0C;&#x4E0E;<code>vTaskDelay()</code>&#x7C7B;&#x4F3C;&#xFF0C;&#x534F;&#x7A0B;&#x4F7F;&#x7528;<code>crDELAY()</code>&#x6765;&#x7B49;&#x5F85;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x3002;</p><p>&#x534F;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#x8F6C;&#x6362;&#x56FE;&#xFF1A;</p><p><img alt="Valid co-routine state transitions" src="http://www.freertos.org/crstate.gif"></p><h2 id="&#x4F18;&#x5148;&#x7EA7;">&#x4F18;&#x5148;&#x7EA7;</h2><p>&#x4E0E;&#x4EFB;&#x52A1;&#x7C7B;&#x4F3C;&#xFF0C;&#x6BCF;&#x4E2A;&#x534F;&#x7A0B;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x4ECE;0&#x5230;<code>configMAX_CO_ROUTINE_PRIORITIES - 1</code>&#x7684;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x5171;&#x4EAB;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x4E14;&#x4F18;&#x5148;&#x7EA7;&#x4E4B;&#x76F8;&#x5BF9;&#x4E8E;&#x534F;&#x7A0B;&#x6765;&#x8BF4;&#x3002;&#x610F;&#x601D;&#x662F;&#xFF0C;&#x5373;&#x4F7F;&#x534F;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x6BD4;&#x4EFB;&#x52A1;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#xFF0C;&#x7CFB;&#x7EDF;&#x4ECD;&#x7136;&#x4F1A;&#x4F18;&#x5148;&#x8C03;&#x5EA6;&#x5230;&#x4EFB;&#x52A1;&#x4E0A;&#xFF0C;&#x800C;&#x975E;&#x534F;&#x7A0B;&#x3002;</p><p>&#x53EF;&#x4EE5;&#x6982;&#x62EC;&#x4E3A;&#xFF1A;<strong>&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x4EFB;&#x52A1; &gt; &#x4F4E;&#x4F18;&#x5148;&#x7EA7;&#x4EFB;&#x52A1; &gt; &#x9AD8;&#x7B49;&#x7EA7;&#x534F;&#x7A0B; &gt; &#x4F4E;&#x7B49;&#x7EA7;&#x534F;&#x7A0B;</strong></p><h2 id="&#x5B9E;&#x73B0;&#x534F;&#x7A0B;">&#x5B9E;&#x73B0;&#x534F;&#x7A0B;</h2><p>&#x4E0E;&#x4EFB;&#x52A1;&#x7C7B;&#x4F3C;(...&#x6807;&#x51C6;&#x7684;&#x5F00;&#x5934;&#x8BED;...)&#xFF0C;freeRTOS&#x4E5F;&#x8981;&#x6C42;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x56FA;&#x5B9A;&#x5F62;&#x5F0F;&#x7684;&#x534F;&#x7A0B;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p><pre><code>    void vACoRoutineFunction( CoRoutineHandle_t xHandle,
-                              UBaseType_t uxIndex )
-    {
-        crSTART( xHandle );
+&#x4E0E;&#x4EFB;&#x52A1;&#x7C7B;&#x4F3C;&#xFF0C;&#x534F;&#x7A0B;&#x5728;&#x7B49;&#x5F85;&#x65F6;&#x95F4;&#x6216;&#x8005;&#x5916;&#x90E8;&#x4E8B;&#x4EF6;&#xFF0C;&#x4F1A;&#x8FDB;&#x5165;&#x963B;&#x585E;&#x6001;&#xFF0C;&#x4E0E;<code>vTaskDelay<span class="token punctuation">(</span><span class="token punctuation">)</span></code>&#x7C7B;&#x4F3C;&#xFF0C;&#x534F;&#x7A0B;&#x4F7F;&#x7528;<code>crDELAY<span class="token punctuation">(</span><span class="token punctuation">)</span></code>&#x6765;&#x7B49;&#x5F85;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x3002;</p><p>&#x534F;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#x8F6C;&#x6362;&#x56FE;&#xFF1A;</p><p><img alt="Valid co-routine state transitions" src="http://www.freertos.org/crstate.gif"></p><h2 id="&#x4F18;&#x5148;&#x7EA7;">&#x4F18;&#x5148;&#x7EA7;</h2><p>&#x4E0E;&#x4EFB;&#x52A1;&#x7C7B;&#x4F3C;&#xFF0C;&#x6BCF;&#x4E2A;&#x534F;&#x7A0B;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x4ECE;0&#x5230;<code>configMAX_CO_ROUTINE_PRIORITIES - 1</code>&#x7684;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x5171;&#x4EAB;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x4E14;&#x4F18;&#x5148;&#x7EA7;&#x4E4B;&#x76F8;&#x5BF9;&#x4E8E;&#x534F;&#x7A0B;&#x6765;&#x8BF4;&#x3002;&#x610F;&#x601D;&#x662F;&#xFF0C;&#x5373;&#x4F7F;&#x534F;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x6BD4;&#x4EFB;&#x52A1;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#xFF0C;&#x7CFB;&#x7EDF;&#x4ECD;&#x7136;&#x4F1A;&#x4F18;&#x5148;&#x8C03;&#x5EA6;&#x5230;&#x4EFB;&#x52A1;&#x4E0A;&#xFF0C;&#x800C;&#x975E;&#x534F;&#x7A0B;&#x3002;</p><p>&#x53EF;&#x4EE5;&#x6982;&#x62EC;&#x4E3A;&#xFF1A;<strong>&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x4EFB;&#x52A1; &gt; &#x4F4E;&#x4F18;&#x5148;&#x7EA7;&#x4EFB;&#x52A1; &gt; &#x9AD8;&#x7B49;&#x7EA7;&#x534F;&#x7A0B; &gt; &#x4F4E;&#x7B49;&#x7EA7;&#x534F;&#x7A0B;</strong></p><h2 id="&#x5B9E;&#x73B0;&#x534F;&#x7A0B;">&#x5B9E;&#x73B0;&#x534F;&#x7A0B;</h2><p>&#x4E0E;&#x4EFB;&#x52A1;&#x7C7B;&#x4F3C;(...&#x6807;&#x51C6;&#x7684;&#x5F00;&#x5934;&#x8BED;...)&#xFF0C;freeRTOS&#x4E5F;&#x8981;&#x6C42;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x56FA;&#x5B9A;&#x5F62;&#x5F0F;&#x7684;&#x534F;&#x7A0B;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p><pre><code>    void vACoRoutineFunction<span class="token punctuation">(</span> CoRoutineHandle_t xHandle,
+                              UBaseType_t uxIndex <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        crSTART<span class="token punctuation">(</span> xHandle <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        for( ;; )
-        {
+        for<span class="token punctuation">(</span> <span class="token punctuation">;</span><span class="token punctuation">;</span> <span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
             -- Co-routine application code here. --
-        }
+        <span class="token punctuation">}</span>
 
-        crEND();
-    }</code></pre>
-<p><code>CoRoutineHandle_t xHandle</code>&#x548C;<code>UBaseType_t uxIndex</code> &#x534F;&#x7A0B;&#x6240;&#x63A5;&#x6536;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5173;&#x4E8E;&#x8FD9;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x542B;&#x4E49;&#x548C;&#x7528;&#x6CD5;&#xFF0C;&#x540E;&#x9762;&#x4F1A;&#x6709;&#x4ECB;&#x7ECD;&#xFF0C;&#x5E26;&#x7740;&#x7591;&#x95EE;&#x5F80;&#x4E0B;&#x770B;&#x5427;&#x3002;</p><p>&#x534F;&#x7A0B;&#x5B9A;&#x4E49;&#x5982;&#x4E0A;&#xFF0C;&#x521B;&#x5EFA;&#x534F;&#x7A0B;&#x4F7F;&#x7528;&#x3002;</p><p>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x51E0;&#x70B9;&#xFF1A;</p><ul><li>&#x6240;&#x6709;&#x7684;&#x534F;&#x7A0B;&#x5FC5;&#x987B;&#x901A;&#x8FC7;&#x8C03;&#x7528;<code>crSTART()</code>&#x548C;<code>crEND()</code>&#x6765;&#x5F00;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x3002;
+        crEND<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p><code>CoRoutineHandle_t xHandle</code>&#x548C;<code>UBaseType_t uxIndex</code> &#x534F;&#x7A0B;&#x6240;&#x63A5;&#x6536;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5173;&#x4E8E;&#x8FD9;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x542B;&#x4E49;&#x548C;&#x7528;&#x6CD5;&#xFF0C;&#x540E;&#x9762;&#x4F1A;&#x6709;&#x4ECB;&#x7ECD;&#xFF0C;&#x5E26;&#x7740;&#x7591;&#x95EE;&#x5F80;&#x4E0B;&#x770B;&#x5427;&#x3002;</p><p>&#x534F;&#x7A0B;&#x5B9A;&#x4E49;&#x5982;&#x4E0A;&#xFF0C;&#x521B;&#x5EFA;&#x534F;&#x7A0B;&#x4F7F;&#x7528;&#x3002;</p><p>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x51E0;&#x70B9;&#xFF1A;</p><ul><li>&#x6240;&#x6709;&#x7684;&#x534F;&#x7A0B;&#x5FC5;&#x987B;&#x901A;&#x8FC7;&#x8C03;&#x7528;<code>crSTART<span class="token punctuation">(</span><span class="token punctuation">)</span></code>&#x548C;<code>crEND<span class="token punctuation">(</span><span class="token punctuation">)</span></code>&#x6765;&#x5F00;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x3002;
 </li>
 <li>&#x4E0E;&#x4EFB;&#x52A1;&#x76F8;&#x540C;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x8FD4;&#x56DE;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x6B7B;&#x5FAA;&#x73AF;&#x3002;
 </li>
 <li>&#x591A;&#x4E2A;&#x534F;&#x7A0B;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x540C;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&quot;&#x6A21;&#x677F;&quot;&#x521B;&#x5EFA;&#xFF0C;&#x5F7C;&#x6B64;&#x4E4B;&#x95F4;&#x901A;&#x8FC7;<code>uxIdex</code>&#x533A;&#x5206;&#x3002;
 </li></ul>
-<h2 id="&#x8C03;&#x5EA6;">&#x8C03;&#x5EA6;</h2><p>&#x5982;&#x4EFB;&#x52A1;<strong>&#x4E0D;&#x7C7B;&#x4F3C;</strong>&#xFF0C;&#x534F;&#x7A0B;&#x7684;&#x8C03;&#x5EA6;&#x662F;&#x624D;&#x7528;&#x91CD;&#x590D;&#x8C03;&#x7528;<code>vCoRountinueSChedule()</code>&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6700;&#x4F73;&#x7684;&#x8C03;&#x7528;&#x65B9;&#x5F0F;&#x662F;&#x5728;&#x7A7A;&#x95F2;&#x4EFB;&#x52A1;&#x7684;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x4E2D;&#x8C03;&#x7528;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5373;&#x4F7F;&#x4F60;&#x53EA;&#x4F7F;&#x7528;&#x534F;&#x7A0B;&#xFF0C;&#x7A7A;&#x95F2;&#x4EFB;&#x52A1;&#x4ECD;&#x7136;&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x5F53;&#x8C03;&#x5EA6;&#x5668;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x3002;</p><p>&#x5728;&#x7A7A;&#x95F2;&#x4EFB;&#x52A1;&#x7684;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x4E2D;&#x8C03;&#x5EA6;&#x534F;&#x7A0B;&#xFF0C;&#x4F1A;&#x8BA9;&#x534F;&#x7A0B;&#x5728;&#x4E0E;&#x4EFB;&#x52A1;&#x6DF7;&#x5408;&#x4F7F;&#x7528;&#x7684;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x603B;&#x662F;&#x5728;&#x6240;&#x6709;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x4E4B;&#x540E;&#x624D;&#x4F1A;&#x6267;&#x884C;&#x3002;<em>&#x56E0;&#x6B64;,&#x5EFA;&#x8BAE;&#x6709;&#x4F7F;&#x7528;&#x6DF7;&#x5408;&#x4EFB;&#x52A1;&#x4E0E;&#x534F;&#x7A0B;&#x9700;&#x6C42;&#x7684;&#x5C0F;&#x4F19;&#x4F34;&#xFF0C;&#x628A;&#x91CD;&#x8981;&#x6027;&#x4F4E;&#x4E14;&#x5360;&#x7528;&#x65F6;&#x95F4;&#x77ED;&#xFF0C;&#x5BF9;&#x5B9E;&#x65F6;&#x6027;&#x8981;&#x6C42;&#x4E0D;&#x9AD8;&#x7684;&#x4E8B;&#x60C5;&#x653E;&#x5728;&#x534F;&#x7A0B;&#x4E2D;&#x5904;&#x7406;</em></p><h2 id="&#x7F3A;&#x70B9;">&#x7F3A;&#x70B9;</h2><p>&#x867D;&#x7136;&#x76F8;&#x6BD4;&#x540C;&#x7B49;&#x6570;&#x91CF;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x534F;&#x7A0B;&#x6240;&#x5360;&#x7528;&#x7684;RAM&#x6BD4;&#x8F83;&#x5C11;&#xFF0C;&#x5728;&#x4F4E;&#x5185;&#x5B58;&#x7684;&#x5904;&#x7406;&#x5668;&#x4E0A;&#x66F4;&#x52A0;&#x9002;&#x5408;&#xFF0C;&#x4F46;&#x662F;&#x540C;&#x6837;&#x534F;&#x7A0B;&#x4E5F;&#x6709;&#x5F88;&#x591A;&#x9650;&#x5236;&#xFF0C;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x4E0A;&#x4E5F;&#x6BD4;&#x4EFB;&#x52A1;&#x590D;&#x6742;&#x3002;</p><p><strong>&#x534F;&#x7A0B;&#x4E2D;&#x7684;&#x53D8;&#x91CF;</strong></p><p>&#x534F;&#x7A0B;&#x7684;&#x5806;&#x6808;&#x4E0D;&#x4F1A;&#x5728;&#x534F;&#x7A0B;&#x963B;&#x585E;&#x7684;&#x65F6;&#x5019;&#x4FDD;&#x6301;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x534F;&#x7A0B;&#x5728;&#x6808;&#x4E0A;&#x6240;&#x7533;&#x8BF7;&#x7684;&#x53D8;&#x91CF;&#x53EF;&#x80FD;&#x4F1A;&#x4E22;&#x5931;&#x5B83;&#x4EEC;&#x7684;&#x503C;&#xFF0C;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x70B9;&#xFF0C;&#x534F;&#x7A0B;&#x4E2D;&#x9700;&#x8981;&#x4FDD;&#x6301;&#x6570;&#x636E;&#x7684;&#x53D8;&#x91CF;&#x5FC5;&#x987B;&#x5B9A;&#x4E49;&#x4F4D;&#x9759;&#x6001;&#x7684;<code>static</code>&#x3002;</p><pre><code>void vACoRoutineFunction( CoRoutineHandle_t xHandle,
-                    UBaseType_t uxIndex )
-{
-static char c = &apos;a&apos;;
+<h2 id="&#x8C03;&#x5EA6;">&#x8C03;&#x5EA6;</h2><p>&#x5982;&#x4EFB;&#x52A1;<strong>&#x4E0D;&#x7C7B;&#x4F3C;</strong>&#xFF0C;&#x534F;&#x7A0B;&#x7684;&#x8C03;&#x5EA6;&#x662F;&#x624D;&#x7528;&#x91CD;&#x590D;&#x8C03;&#x7528;<code>vCoRountinueSChedule<span class="token punctuation">(</span><span class="token punctuation">)</span></code>&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6700;&#x4F73;&#x7684;&#x8C03;&#x7528;&#x65B9;&#x5F0F;&#x662F;&#x5728;&#x7A7A;&#x95F2;&#x4EFB;&#x52A1;&#x7684;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x4E2D;&#x8C03;&#x7528;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5373;&#x4F7F;&#x4F60;&#x53EA;&#x4F7F;&#x7528;&#x534F;&#x7A0B;&#xFF0C;&#x7A7A;&#x95F2;&#x4EFB;&#x52A1;&#x4ECD;&#x7136;&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x5F53;&#x8C03;&#x5EA6;&#x5668;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x3002;</p><p>&#x5728;&#x7A7A;&#x95F2;&#x4EFB;&#x52A1;&#x7684;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x4E2D;&#x8C03;&#x5EA6;&#x534F;&#x7A0B;&#xFF0C;&#x4F1A;&#x8BA9;&#x534F;&#x7A0B;&#x5728;&#x4E0E;&#x4EFB;&#x52A1;&#x6DF7;&#x5408;&#x4F7F;&#x7528;&#x7684;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x603B;&#x662F;&#x5728;&#x6240;&#x6709;&#x7684;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5B8C;&#x4E4B;&#x540E;&#x624D;&#x4F1A;&#x6267;&#x884C;&#x3002;<em>&#x56E0;&#x6B64;,&#x5EFA;&#x8BAE;&#x6709;&#x4F7F;&#x7528;&#x6DF7;&#x5408;&#x4EFB;&#x52A1;&#x4E0E;&#x534F;&#x7A0B;&#x9700;&#x6C42;&#x7684;&#x5C0F;&#x4F19;&#x4F34;&#xFF0C;&#x628A;&#x91CD;&#x8981;&#x6027;&#x4F4E;&#x4E14;&#x5360;&#x7528;&#x65F6;&#x95F4;&#x77ED;&#xFF0C;&#x5BF9;&#x5B9E;&#x65F6;&#x6027;&#x8981;&#x6C42;&#x4E0D;&#x9AD8;&#x7684;&#x4E8B;&#x60C5;&#x653E;&#x5728;&#x534F;&#x7A0B;&#x4E2D;&#x5904;&#x7406;</em></p><h2 id="&#x7F3A;&#x70B9;">&#x7F3A;&#x70B9;</h2><p>&#x867D;&#x7136;&#x76F8;&#x6BD4;&#x540C;&#x7B49;&#x6570;&#x91CF;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x534F;&#x7A0B;&#x6240;&#x5360;&#x7528;&#x7684;RAM&#x6BD4;&#x8F83;&#x5C11;&#xFF0C;&#x5728;&#x4F4E;&#x5185;&#x5B58;&#x7684;&#x5904;&#x7406;&#x5668;&#x4E0A;&#x66F4;&#x52A0;&#x9002;&#x5408;&#xFF0C;&#x4F46;&#x662F;&#x540C;&#x6837;&#x534F;&#x7A0B;&#x4E5F;&#x6709;&#x5F88;&#x591A;&#x9650;&#x5236;&#xFF0C;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x4E0A;&#x4E5F;&#x6BD4;&#x4EFB;&#x52A1;&#x590D;&#x6742;&#x3002;</p><p><strong>&#x534F;&#x7A0B;&#x4E2D;&#x7684;&#x53D8;&#x91CF;</strong></p><p>&#x534F;&#x7A0B;&#x7684;&#x5806;&#x6808;&#x4E0D;&#x4F1A;&#x5728;&#x534F;&#x7A0B;&#x963B;&#x585E;&#x7684;&#x65F6;&#x5019;&#x4FDD;&#x6301;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x534F;&#x7A0B;&#x5728;&#x6808;&#x4E0A;&#x6240;&#x7533;&#x8BF7;&#x7684;&#x53D8;&#x91CF;&#x53EF;&#x80FD;&#x4F1A;&#x4E22;&#x5931;&#x5B83;&#x4EEC;&#x7684;&#x503C;&#xFF0C;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x70B9;&#xFF0C;&#x534F;&#x7A0B;&#x4E2D;&#x9700;&#x8981;&#x4FDD;&#x6301;&#x6570;&#x636E;&#x7684;&#x53D8;&#x91CF;&#x5FC5;&#x987B;&#x5B9A;&#x4E49;&#x4F4D;&#x9759;&#x6001;&#x7684;<code>static</code>&#x3002;</p><pre><code>void vACoRoutineFunction<span class="token punctuation">(</span> CoRoutineHandle_t xHandle,
+                    UBaseType_t uxIndex <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+static char c <span class="token operator">=</span> <span class="token string">&apos;a&apos;</span><span class="token punctuation">;</span>
 
-   // Co-routines must start with a call to crSTART().
-   crSTART( xHandle );
+   // Co-routines must start with a call to crSTART<span class="token punctuation">(</span><span class="token punctuation">)</span>.
+   crSTART<span class="token punctuation">(</span> xHandle <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-   for( ;; )
-   {
-      // &#x5982;&#x679C;&#x6211;&#x4EEC;&#x5728;&#x8FD9;&#x91CC;&#x5C06;c&#x7684;&#x503C;&#x8BBE;&#x4E3A;&apos;b&apos; ...
-      c = &apos;b&apos;;
+   for<span class="token punctuation">(</span> <span class="token punctuation">;</span><span class="token punctuation">;</span> <span class="token punctuation">)</span>
+   <span class="token punctuation">{</span>
+      // &#x5982;&#x679C;&#x6211;&#x4EEC;&#x5728;&#x8FD9;&#x91CC;&#x5C06;c&#x7684;&#x503C;&#x8BBE;&#x4E3A;<span class="token string">&apos;b&apos;</span> <span class="token punctuation">..</span>.
+      c <span class="token operator">=</span> <span class="token string">&apos;b&apos;</span><span class="token punctuation">;</span>
 
-      // ... &#x7136;&#x540E;&#x963B;&#x585E;&#x534F;&#x7A0B; ...
-      crDELAY( xHandle, 10 );
+      // <span class="token punctuation">..</span>. &#x7136;&#x540E;&#x963B;&#x585E;&#x534F;&#x7A0B; <span class="token punctuation">..</span>.
+      crDELAY<span class="token punctuation">(</span> xHandle, 10 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-      // ... c&#x7684;&#x503C;&#x53EA;&#x6709;&#x5728;&#x7533;&#x660E;&#x6210;&#x9759;&#x6001;&#x7C7B;&#x578B;&#x624D;&#x4F1A;&#x4E00;&#x5B9A;&#x7B49;&#x4E8E;&apos;b&apos; 
-      // (as it is here).
-   }
+      // <span class="token punctuation">..</span>. c&#x7684;&#x503C;&#x53EA;&#x6709;&#x5728;&#x7533;&#x660E;&#x6210;&#x9759;&#x6001;&#x7C7B;&#x578B;&#x624D;&#x4F1A;&#x4E00;&#x5B9A;&#x7B49;&#x4E8E;<span class="token string">&apos;b&apos;</span> 
+      // <span class="token punctuation">(</span>as it is here<span class="token punctuation">)</span>.
+   <span class="token punctuation">}</span>
 
-   // Co-routines must end with a call to crEND().
-   crEND();
-}</code></pre>
-<p><strong>&#x534F;&#x7A0B;&#x4E2D;&#x7684;&#x963B;&#x585E;API&#x8C03;&#x7528;</strong></p><p>&#x53E6;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x56E0;&#x6B64;&#x5BFC;&#x81F4;&#x7684;&#x95EE;&#x9898;&#x5C31;&#x662F;&#xFF0C;&#x6240;&#x6709;&#x80FD;&#x5BFC;&#x81F4;&#x534F;&#x7A0B;&#x963B;&#x585E;&#x7684;API&#x8C03;&#x7528;&#xFF0C;&#x53EA;&#x80FD;&#x7531;&#x534F;&#x7A0B;&#x672C;&#x8EAB;&#x8C03;&#x7528;&#xFF0C;&#x4E0D;&#x80FD;&#x7531;&#x5176;&#x5185;&#x90E8;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;&#x6765;&#x8C03;&#x7528;&#x3002;</p><pre><code>void vACoRoutineFunction( CoRoutineHandle_t xHandle, UBaseType_t uxIndex )
-{
-   // Co-routines must start with a call to crSTART().
-   crSTART( xHandle );
+   // Co-routines must end with a call to crEND<span class="token punctuation">(</span><span class="token punctuation">)</span>.
+   crEND<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong>&#x534F;&#x7A0B;&#x4E2D;&#x7684;&#x963B;&#x585E;API&#x8C03;&#x7528;</strong></p><p>&#x53E6;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x56E0;&#x6B64;&#x5BFC;&#x81F4;&#x7684;&#x95EE;&#x9898;&#x5C31;&#x662F;&#xFF0C;&#x6240;&#x6709;&#x80FD;&#x5BFC;&#x81F4;&#x534F;&#x7A0B;&#x963B;&#x585E;&#x7684;API&#x8C03;&#x7528;&#xFF0C;&#x53EA;&#x80FD;&#x7531;&#x534F;&#x7A0B;&#x672C;&#x8EAB;&#x8C03;&#x7528;&#xFF0C;&#x4E0D;&#x80FD;&#x7531;&#x5176;&#x5185;&#x90E8;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;&#x6765;&#x8C03;&#x7528;&#x3002;</p><pre><code>void vACoRoutineFunction<span class="token punctuation">(</span> CoRoutineHandle_t xHandle, UBaseType_t uxIndex <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   // Co-routines must start with a call to crSTART<span class="token punctuation">(</span><span class="token punctuation">)</span>.
+   crSTART<span class="token punctuation">(</span> xHandle <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-   for( ;; )
-   {
-      // It is fine to make a blocking call here,
-      crDELAY( xHandle, 10 );
+   for<span class="token punctuation">(</span> <span class="token punctuation">;</span><span class="token punctuation">;</span> <span class="token punctuation">)</span>
+   <span class="token punctuation">{</span>
+      // It is fine to <span class="token function">make</span> a blocking call here,
+      crDELAY<span class="token punctuation">(</span> xHandle, 10 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
       // but a blocking call cannot be made from within
-      // vACalledFunction().
-      vACalledFunction();
-   }
+      // vACalledFunction<span class="token punctuation">(</span><span class="token punctuation">)</span>.
+      vACalledFunction<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
 
-   // Co-routines must end with a call to crEND().
-   crEND();
-}
+   // Co-routines must end with a call to crEND<span class="token punctuation">(</span><span class="token punctuation">)</span>.
+   crEND<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-void vACalledFunction( void )
-{
-   // Cannot make a blocking call here!
-}</code></pre>
-<p><strong>&#x534F;&#x7A0B;&#x4E2D;&#x7684;<code>switch</code>&#x8BED;&#x53E5;</strong></p><p>freeRTOS&#x7684;&#x9ED8;&#x8BA4;&#x534F;&#x7A0B;&#x5B9E;&#x73B0;&#x4E2D;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;<code>switch</code>&#x8BED;&#x53E5;</p><pre><code>void vACoRoutineFunction( CoRoutineHandle_t xHandle, UBaseType_t uxIndex )
-{
-   // Co-routines must start with a call to crSTART().
-   crSTART( xHandle );
+void vACalledFunction<span class="token punctuation">(</span> void <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   // Cannot <span class="token function">make</span> a blocking call here<span class="token operator">!</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong>&#x534F;&#x7A0B;&#x4E2D;&#x7684;<code>switch</code>&#x8BED;&#x53E5;</strong></p><p>freeRTOS&#x7684;&#x9ED8;&#x8BA4;&#x534F;&#x7A0B;&#x5B9E;&#x73B0;&#x4E2D;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;<code>switch</code>&#x8BED;&#x53E5;</p><pre><code>void vACoRoutineFunction<span class="token punctuation">(</span> CoRoutineHandle_t xHandle, UBaseType_t uxIndex <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   // Co-routines must start with a call to crSTART<span class="token punctuation">(</span><span class="token punctuation">)</span>.
+   crSTART<span class="token punctuation">(</span> xHandle <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-   for( ;; )
-   {
-      // It is fine to make a blocking call here,
-      crDELAY( xHandle, 10 );
+   for<span class="token punctuation">(</span> <span class="token punctuation">;</span><span class="token punctuation">;</span> <span class="token punctuation">)</span>
+   <span class="token punctuation">{</span>
+      // It is fine to <span class="token function">make</span> a blocking call here,
+      crDELAY<span class="token punctuation">(</span> xHandle, 10 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-      switch( aVariable )
-      {
-         case 1 : // Cannot make a blocking call here!
-                break;
-         default: // Or here!
-      }
-   }
+      switch<span class="token punctuation">(</span> aVariable <span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+         <span class="token keyword">case</span> 1 <span class="token keyword">:</span> // Cannot <span class="token function">make</span> a blocking call here<span class="token operator">!</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+         default: // Or here<span class="token operator">!</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
 
-   // Co-routines must end with a call to crEND().
-   crEND();
-}</code></pre>
-<h2 id="&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6817;&#x5B50;">&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6817;&#x5B50;</h2><p>&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x662F;&#x6F14;&#x793A;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x534F;&#x7A0B;&#x6765;&#x662F;LED&#x95EA;&#x70C1;&#xFF0C;&#x5728;&#x8FD9;&#x8981;&#x8BF4;&#x660E;&#x7684;&#x662F;&#xFF0C;&#x4E0D;&#x8981;&#x4EE5;&#x4E3A;&#x6240;&#x6709;&#x7684;LED&#x95EA;&#x70C1;&#x90FD;&#x53EF;&#x4EE5;&#x653E;&#x5728;&#x534F;&#x7A0B;&#x4E2D;&#x6765;&#x505A;&#xFF0C;&#x522B;&#x5982;&#x7535;&#x80FD;&#x8868;&#x7684;&#x8109;&#x51B2;&#x63A7;&#x5236;&#xFF0C;&#x5BF9;&#x8109;&#x51B2;&#x5BBD;&#x5EA6;&#x6709;&#x8981;&#x6C42;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x653E;&#x5728;&#x534F;&#x7A0B;&#x91CC;&#xFF0C;&#x5F88;&#x6709;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x5FFD;&#x6162;&#x5FFD;&#x5FEB;&#x3002;&#x534F;&#x7A0B;&#x7684;&#x5B9E;&#x65F6;&#x6027;&#x8981;&#x5DEE;&#x70B9;&#xFF0C;&#x6700;&#x597D;&#x653E;&#x5728;&#x8FD9;&#x91CC;&#x7684;&#x4EFB;&#x52A1;&#x90FD;&#x662F;&#x4E9B;&#x5BF9;&#x5B9E;&#x65F6;&#x6027;&#x8981;&#x6C42;&#x4E0D;&#x9AD8;&#x7684;&#x3002;</p><ol><li><p>&#x7B80;&#x5355;&#x7684;LED&#x95EA;&#x70C1;&#x4EE3;&#x7801;</p><pre><code>void vFlashCoRoutine( CoRoutineHandle_t xHandle,
-              UBaseType_t uxIndex )
-{
-// Co-routines must start with a call to crSTART().
-crSTART( xHandle );
+   // Co-routines must end with a call to crEND<span class="token punctuation">(</span><span class="token punctuation">)</span>.
+   crEND<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6817;&#x5B50;">&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6817;&#x5B50;</h2><p>&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x662F;&#x6F14;&#x793A;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x534F;&#x7A0B;&#x6765;&#x662F;LED&#x95EA;&#x70C1;&#xFF0C;&#x5728;&#x8FD9;&#x8981;&#x8BF4;&#x660E;&#x7684;&#x662F;&#xFF0C;&#x4E0D;&#x8981;&#x4EE5;&#x4E3A;&#x6240;&#x6709;&#x7684;LED&#x95EA;&#x70C1;&#x90FD;&#x53EF;&#x4EE5;&#x653E;&#x5728;&#x534F;&#x7A0B;&#x4E2D;&#x6765;&#x505A;&#xFF0C;&#x522B;&#x5982;&#x7535;&#x80FD;&#x8868;&#x7684;&#x8109;&#x51B2;&#x63A7;&#x5236;&#xFF0C;&#x5BF9;&#x8109;&#x51B2;&#x5BBD;&#x5EA6;&#x6709;&#x8981;&#x6C42;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x653E;&#x5728;&#x534F;&#x7A0B;&#x91CC;&#xFF0C;&#x5F88;&#x6709;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x5FFD;&#x6162;&#x5FFD;&#x5FEB;&#x3002;&#x534F;&#x7A0B;&#x7684;&#x5B9E;&#x65F6;&#x6027;&#x8981;&#x5DEE;&#x70B9;&#xFF0C;&#x6700;&#x597D;&#x653E;&#x5728;&#x8FD9;&#x91CC;&#x7684;&#x4EFB;&#x52A1;&#x90FD;&#x662F;&#x4E9B;&#x5BF9;&#x5B9E;&#x65F6;&#x6027;&#x8981;&#x6C42;&#x4E0D;&#x9AD8;&#x7684;&#x3002;</p><ol><li><p>&#x7B80;&#x5355;&#x7684;LED&#x95EA;&#x70C1;&#x4EE3;&#x7801;</p><pre><code>void vFlashCoRoutine<span class="token punctuation">(</span> CoRoutineHandle_t xHandle,
+              UBaseType_t uxIndex <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+// Co-routines must start with a call to crSTART<span class="token punctuation">(</span><span class="token punctuation">)</span>.
+crSTART<span class="token punctuation">(</span> xHandle <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-for( ;; )
-{
-   // Delay for a fixed period.
-   crDELAY( xHandle, 10 );
+for<span class="token punctuation">(</span> <span class="token punctuation">;</span><span class="token punctuation">;</span> <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   // Delay <span class="token keyword">for</span> a fixed period.
+   crDELAY<span class="token punctuation">(</span> xHandle, 10 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
    // Flash an LED.
-   vParTestToggleLED( 0 );
-}
+   vParTestToggleLED<span class="token punctuation">(</span> 0 <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// Co-routines must end with a call to crEND().
-crEND();
-}</code></pre>
+// Co-routines must end with a call to crEND<span class="token punctuation">(</span><span class="token punctuation">)</span>.
+crEND<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <ol><li>&#x8C03;&#x5EA6;&#x534F;&#x7A0B;
-&#x534F;&#x7A0B;&#x7684;&#x8C03;&#x5EA6;&#x901A;&#x8FC7;&#x91CD;&#x590D;&#x8C03;&#x7528;<code>vCoRoutineSchedule()</code>&#x5B9E;&#x73B0;&#xFF0C;&#x6700;&#x597D;&#x653E;&#x5728;&#x7A7A;&#x95F2;&#x4EFB;&#x52A1;&#x7684;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x56E0;&#x6B64;&#x9996;&#x5148;&#x9700;&#x8981;&#x4F7F;&#x80FD;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#xFF0C;&#x8BBE;&#x7F6E;<code>configUSE_IDLE_HOOK</code>&#x4E3A;1&#xFF0C;&#x63A5;&#x7740;&#x5199;&#x7A7A;&#x95F2;&#x4EFB;&#x52A1;&#x7684;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#xFF1A;
+&#x534F;&#x7A0B;&#x7684;&#x8C03;&#x5EA6;&#x901A;&#x8FC7;&#x91CD;&#x590D;&#x8C03;&#x7528;<code>vCoRoutineSchedule<span class="token punctuation">(</span><span class="token punctuation">)</span></code>&#x5B9E;&#x73B0;&#xFF0C;&#x6700;&#x597D;&#x653E;&#x5728;&#x7A7A;&#x95F2;&#x4EFB;&#x52A1;&#x7684;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x56E0;&#x6B64;&#x9996;&#x5148;&#x9700;&#x8981;&#x4F7F;&#x80FD;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#xFF0C;&#x8BBE;&#x7F6E;<code>configUSE_IDLE_HOOK</code>&#x4E3A;1&#xFF0C;&#x63A5;&#x7740;&#x5199;&#x7A7A;&#x95F2;&#x4EFB;&#x52A1;&#x7684;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#xFF1A;
 </li></ol>
-<pre><code>void vApplicationIdleHook( void )
-{
-vCoRoutineSchedule( void );
-}</code></pre>
-<p>&#x5982;&#x679C;&#xFF0C;&#x7A7A;&#x95F2;&#x4EFB;&#x52A1;&#x7684;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x4E0D;&#x5305;&#x542B;&#x5176;&#x4ED6;&#x529F;&#x80FD;&#xFF0C;&#x5EFA;&#x8BAE;&#x8FD9;&#x6837;&#x5199;&#xFF0C;&#x6548;&#x7387;&#x4F1A;&#x9AD8;&#x70B9;&#xFF1A;</p><pre><code>void vApplicationIdleHook( void )
-{
-for( ;; )
-{
-   vCoRoutineSchedule( void );
-}
-}</code></pre>
+<pre><code>void vApplicationIdleHook<span class="token punctuation">(</span> void <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+vCoRoutineSchedule<span class="token punctuation">(</span> void <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>&#x5982;&#x679C;&#xFF0C;&#x7A7A;&#x95F2;&#x4EFB;&#x52A1;&#x7684;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x4E0D;&#x5305;&#x542B;&#x5176;&#x4ED6;&#x529F;&#x80FD;&#xFF0C;&#x5EFA;&#x8BAE;&#x8FD9;&#x6837;&#x5199;&#xFF0C;&#x6548;&#x7387;&#x4F1A;&#x9AD8;&#x70B9;&#xFF1A;</p><pre><code>void vApplicationIdleHook<span class="token punctuation">(</span> void <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+for<span class="token punctuation">(</span> <span class="token punctuation">;</span><span class="token punctuation">;</span> <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   vCoRoutineSchedule<span class="token punctuation">(</span> void <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <ol><li>&#x521B;&#x5EFA;&#x534F;&#x7A0B;&#x5E76;&#x542F;&#x52A8;&#x8C03;&#x7528;&#x5668;
 ```
 </li></ol>
@@ -535,8 +567,8 @@ for( ;; )
    // in as 0.
    xCoRoutineCreate( vFlashCoRoutine, PRIORITY_0, 0 );</p><p>// NOTE:  Tasks can also be created here!</p><p>// Start the RTOS scheduler.
    vTaskStartScheduler();
-}</p><pre><code>4. &#x4F7F;&#x7528;`index`&#x6765;&#x5B9E;&#x73B0;&#x591A;&#x4E2A;LED&#x95EA;&#x70C1;
-&#x5982;&#x524D;&#x6240;&#x8FF0;&#xFF0C;&#x534F;&#x7A0B;&#x51FD;&#x6570;&#x7684;&#x7533;&#x660E;&#x5B9E;&#x9645;&#x4E0A;&#x7C7B;&#x4F3C;&#x7533;&#x660E;&#x4E86;&#x4E00;&#x4E2A;&quot;&#x6A21;&#x677F;&quot;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&quot;&#x6A21;&#x677F;&quot;&#x58F0;&#x660E;&#x591A;&#x4E2A;&#x534F;&#x7A0B;&#xFF0C;&#x6BCF;&#x4E2A;&#x534F;&#x7A0B;&#x4E4B;&#x95F4;&#x4F7F;&#x7528;`index`&#x533A;&#x5206;&#xFF1A;</code></pre>
+}</p><pre><code>4. &#x4F7F;&#x7528;<span class="token variable"><span class="token variable">`</span>index<span class="token variable">`</span></span>&#x6765;&#x5B9E;&#x73B0;&#x591A;&#x4E2A;LED&#x95EA;&#x70C1;
+&#x5982;&#x524D;&#x6240;&#x8FF0;&#xFF0C;&#x534F;&#x7A0B;&#x51FD;&#x6570;&#x7684;&#x7533;&#x660E;&#x5B9E;&#x9645;&#x4E0A;&#x7C7B;&#x4F3C;&#x7533;&#x660E;&#x4E86;&#x4E00;&#x4E2A;<span class="token string">&quot;&#x6A21;&#x677F;&quot;</span>&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;<span class="token string">&quot;&#x6A21;&#x677F;&quot;</span>&#x58F0;&#x660E;&#x591A;&#x4E2A;&#x534F;&#x7A0B;&#xFF0C;&#x6BCF;&#x4E2A;&#x534F;&#x7A0B;&#x4E4B;&#x95F4;&#x4F7F;&#x7528;<span class="token variable"><span class="token variable">`</span>index<span class="token variable">`</span></span>&#x533A;&#x5206;&#xFF1A;</code></pre>
 <h1 id="include-taskh">include &quot;task.h&quot;</h1><h1 id="include-croutineh">include &quot;croutine.h&quot;</h1><h1 id="define-priority0--------0">define PRIORITY_0        0</h1><h1 id="define-numcoroutines----8">define NUM_COROUTINES    8</h1><p>void main( void )
 {
 int i;</p><p>for( i = 0; i &lt; NUM_COROUTINES; i++ )
@@ -555,7 +587,7 @@ const int iLEDToFlash[ NUM_COROUTINES ] = { 0, 1, 2, 3, 4, 5, 6, 7 }</p><p>void 
    {
       // &#x4E0D;&#x540C;&#x7684;&#x534F;&#x7A0B;&#x963B;&#x585E;&#x65F6;&#x95F4;&#x4E0D;&#x540C;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x95EA;&#x70C1;&#x9891;&#x7387;&#x4E0D;&#x540C;
       crDELAY( xHandle, iFlashRate[ uxIndex ] );</p><pre><code>  // &#x81EA;&#x7136;&#xFF0C;&#x6BCF;&#x4E2A;&#x534F;&#x7A0B;&#x53EF;&#x6839;&#x636E;index&#x9009;&#x62E9;&#x4E0D;&#x540C;&#x7684;LED
-  vParTestToggleLED( iLEDToFlash[ uxIndex ] );</code></pre>
+  vParTestToggleLED<span class="token punctuation">(</span> iLEDToFlash<span class="token punctuation">[</span> uxIndex <span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>}</p><p>// Co-routines must end with a call to crEND().
    crEND();
 }
@@ -602,7 +634,7 @@ const int iLEDToFlash[ NUM_COROUTINES ] = { 0, 1, 2, 3, 4, 5, 6, 7 }</p><p>void 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"协程","level":"1.3.1.2","depth":3,"next":{"title":"通信机制","level":"1.3.2","depth":2,"path":"入门/通信机制/readme.md","ref":"入门/通信机制/readme.md","articles":[{"title":"队列","level":"1.3.2.1","depth":3,"path":"入门/通信机制/readme.md","ref":"入门/通信机制/readme.md","articles":[]},{"title":"二值信号量","level":"1.3.2.2","depth":3,"path":"入门/通信机制/队列.md","ref":"入门/通信机制/队列.md","articles":[]},{"title":"计数信号量","level":"1.3.2.3","depth":3,"path":"入门/通信机制/计数信号量.md","ref":"入门/通信机制/计数信号量.md","articles":[]},{"title":"互斥量","level":"1.3.2.4","depth":3,"path":"入门/通信机制/互斥量.md","ref":"入门/通信机制/互斥量.md","articles":[]},{"title":"递归互斥量","level":"1.3.2.5","depth":3,"path":"入门/通信机制/递归互斥量.md","ref":"入门/通信机制/递归互斥量.md","articles":[]},{"title":"任务通知","level":"1.3.2.6","depth":3,"path":"入门/通信机制/任务通知.md","ref":"入门/通信机制/任务通知.md","articles":[]}]},"previous":{"title":"任务","level":"1.3.1.1","depth":3,"path":"入门/任务和协程/任务.md","ref":"入门/任务和协程/任务.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-comscore"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"sitemap-general":{"prefix":"https://cyberzhg.gitbooks.io/clrs_solution/content/"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"mobi":{"fontSize":12,"footerTemplate":null,"headerTemplate":null,"margin":{"bottom":36,"left":62,"right":62,"top":36},"pageNumbers":false,"paperSize":"a4"},"theme":"default","author":"tangguocheng","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"freeRTOS中文文档","language":"Chinese","links":{"sidebar":{"博客":"http://www.xn--4gqa63c686ta68iba.ren/"}},"gitbook":"*","description":"freeRTOS中文文档","extension":null},"file":{"path":"入门/任务和协程/协程.md","mtime":"2016-08-29T00:47:32.768Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-29T03:28:53.428Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"协程","level":"1.3.1.2","depth":3,"next":{"title":"通信机制","level":"1.3.2","depth":2,"path":"入门/通信机制/readme.md","ref":"入门/通信机制/readme.md","articles":[{"title":"队列","level":"1.3.2.1","depth":3,"path":"入门/通信机制/readme.md","ref":"入门/通信机制/readme.md","articles":[]},{"title":"二值信号量","level":"1.3.2.2","depth":3,"path":"入门/通信机制/队列.md","ref":"入门/通信机制/队列.md","articles":[]},{"title":"计数信号量","level":"1.3.2.3","depth":3,"path":"入门/通信机制/计数信号量.md","ref":"入门/通信机制/计数信号量.md","articles":[]},{"title":"互斥量","level":"1.3.2.4","depth":3,"path":"入门/通信机制/互斥量.md","ref":"入门/通信机制/互斥量.md","articles":[]},{"title":"递归互斥量","level":"1.3.2.5","depth":3,"path":"入门/通信机制/递归互斥量.md","ref":"入门/通信机制/递归互斥量.md","articles":[]},{"title":"任务通知","level":"1.3.2.6","depth":3,"path":"入门/通信机制/任务通知.md","ref":"入门/通信机制/任务通知.md","articles":[]}]},"previous":{"title":"任务","level":"1.3.1.1","depth":3,"path":"入门/任务和协程/任务.md","ref":"入门/任务和协程/任务.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prismx","-highlight","duoshuo","ga","theme-comscore"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"duoshuo":{"short_name":"tangguocheng","theme":"default"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"prismx":{"css":["prismjs/themes/prism-tomorrow.css"]},"ga":{"configuration":"auto","token":"UA-80700049-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"mobi":{"fontSize":12,"footerTemplate":null,"headerTemplate":null,"margin":{"bottom":36,"left":62,"right":62,"top":36},"pageNumbers":false,"paperSize":"a4"},"theme":"default","author":"tangguocheng","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"freeRTOS中文文档","language":"Chinese","links":{"sidebar":{"博客":"http://www.xn--4gqa63c686ta68iba.ren/"}},"gitbook":"*","description":"freeRTOS中文文档","extension":null},"file":{"path":"入门/任务和协程/协程.md","mtime":"2016-08-29T00:47:32.768Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-29T08:06:44.199Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -610,6 +642,14 @@ const int iLEDToFlash[ NUM_COROUTINES ] = { 0, 1, 2, 3, 4, 5, 6, 7 }</p><p>void 
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-duoshuo/duoshuo.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

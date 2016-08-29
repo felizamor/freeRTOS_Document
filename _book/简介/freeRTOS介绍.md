@@ -80,22 +80,26 @@
 - Cross development from a standard Windows host
 
 ### Mission
+
 > 
 "Provide a free product that surpasses the quality and service 
 demanded by users of commercial alternatives"
 The original mission of the FreeRTOS project was to provide a free RTOS solution that was easy to use. That is, easy to build and deploy, on a Windows (or Linux) host computer, without having to figure out which source files are required, which include paths are required, or how to configure the real time debugging environment. This has been achieved through the provision of pre-configured, build-able, example projects for each officially support port.
+
 >
 Naturally, as the FreeRTOS started circa 2003, how these projects are created has evolved for the better, and some original projects remain that don't demonstrate all of the RTOS functionality, or have become stale. However, each project is fully tested before it is added to the FreeRTOS zip file distribution, and many RTOS demo projects undergo active maintenance before each new release. Responding to user feedback, each new demo added to the distribution now also includes a simple "blinky" style getting started configuration to compliment the comprehensive examples.
 
 ### Design Goals
 
 The primary design goals are:
+
 > 
 Easy to use
 Small footprint
 Robust
 
 ### FreeRTOS Founder
+
 >
 The FreeRTOS project was founded by Richard Barry. Richard graduated with 1st Class Honours in Computing for Real Time Systems. He's been directly involved in the start up of several companies, primarily working in the industrial automation and aerospace and simulation markets. Richard is currently a director of Real Time Engineers Ltd., owners and maintainers of the FreeRTOS project.
 

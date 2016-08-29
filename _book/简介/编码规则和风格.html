@@ -17,7 +17,7 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prismx/prism.css">
                 
             
                 
@@ -358,6 +358,38 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4" data-path="../进阶/readme.md">
+            
+                <span>
+            
+                    
+                    进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../进阶/源代码组织结构/源代码组织结构.html">
+            
+                <a href="../进阶/源代码组织结构/源代码组织结构.html">
+            
+                    
+                    源代码组织结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -429,7 +461,7 @@
 </li></ul>
 <h3 id="&#x51FD;&#x6570;">&#x51FD;&#x6570;</h3><ul><li>&#x6587;&#x4EF6;&#x8303;&#x56F4;&#x7684;&#x9759;&#x6001;&#x51FD;&#x6570;(<code>static</code>&#x9650;&#x5B9A;)&#x524D;&#x7F00;<code>prv</code>
 </li>
-<li>API&#x51FD;&#x6570;&#x7684;&#x524D;&#x7F00;&#x7531;&#x5B83;&#x4EEC;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x51B3;&#x5B9A;&#xFF0C;&#x5177;&#x4F53;&#x53C2;&#x7167;&#x53D8;&#x91CF;&#x7684;&#x547D;&#x540D;&#x7EA6;&#x5B9A;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x5BF9;&#x4E8E;<code>void</code>&#x524D;&#x7F00;&#x4E3A;<code>v</code>
+<li>API&#x51FD;&#x6570;&#x7684;&#x524D;&#x7F00;&#x7531;&#x5B83;&#x4EEC;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x51B3;&#x5B9A;&#xFF0C;&#x5177;&#x4F53;&#x53C2;&#x7167;&#x53D8;&#x91CF;&#x7684;&#x547D;&#x540D;&#x7EA6;&#x5B9A;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x5BF9;&#x4E8E;<code>void</code>&#x524D;&#x7F00;&#x4E3A;<code><span class="token function">v</span></code>
 </li>
 <li>API&#x51FD;&#x6570;&#x7684;&#x540D;&#x5B57;&#x9664;&#x6839;&#x636E;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x786E;&#x5B9A;&#x7684;&#x524D;&#x7F00;&#x5916;&#xFF0C;&#x540D;&#x79F0;&#x7531;&#x5176;&#x6240;&#x5728;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x4F5C;&#x4E3A;&#x5F00;&#x59CB;&#x3002;&#x4F8B;&#x5982;<code>vTaskDelete</code>&#xFF0C;&#x4EE3;&#x8868;&#x5176;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x4E3A;<code>void</code>&#xFF0C;&#x8FD9;&#x4E2A;API&#x51FD;&#x6570;&#x4FDD;&#x5B58;&#x5728;<code>task.c</code>&#x6587;&#x4EF6;&#x4E2D;
 </li></ul>
@@ -450,29 +482,29 @@ In line with MISRA guides, unqualified character pointers are permitted, but onl
 </li>
 <li><code>StackType_t</code>&#x5B9A;&#x4E49;&#x5806;&#x6808;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x5C31;&#x662F;&#x67B6;&#x6784;&#x7684;&#x4F4D;&#x6570;&#x3002;&#x5F53;&#x7136;&#x4E5F;&#x6709;&#x4F8B;&#x5916;&#xFF0C;&#x6BD4;&#x5982;freeRTOS&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x5806;&#x6808;
 </li></ul>
-<h3 id="&#x4EE3;&#x7801;&#x5206;&#x5272;">&#x4EE3;&#x7801;&#x5206;&#x5272;</h3><ul><li>&#x7F29;&#x8FDB;&#xFF1A;&#x4F7F;&#x7528;<code>Tab</code>&#x7F29;&#x8FDB;&#xFF0C;<code>1 tab == 4 spaces</code>
+<h3 id="&#x4EE3;&#x7801;&#x5206;&#x5272;">&#x4EE3;&#x7801;&#x5206;&#x5272;</h3><ul><li>&#x7F29;&#x8FDB;&#xFF1A;&#x4F7F;&#x7528;<code>Tab</code>&#x7F29;&#x8FDB;&#xFF0C;<code>1 tab <span class="token operator">==</span> 4 spaces</code>
 </li>
 <li>&#x6CE8;&#x91CA;&#xFF1A;&#x6CE8;&#x91CA;&#x7684;&#x957F;&#x5EA6;&#x4E0D;&#x4F1A;&#x8D85;&#x8FC7;80&#x5217;&#xFF0C;&#x9664;&#x975E;&#x7D27;&#x63A5;&#x7740;&#x53D8;&#x91CF;&#x3001;&#x63CF;&#x8FF0;&#x3002;&#x4E0D;&#x4F7F;&#x7528;C++&#x7684;&#x53CC;&#x659C;&#x7EBF;(<code>//</code>)&#x8FDB;&#x884C;&#x6CE8;&#x91CA;&#x3002;<em>&#x8BD1;&#x8005;&#x6CE8;&#xFF1A;&#x9632;&#x6B62;&#x4EE3;&#x7801;&#x683C;&#x5F0F;&#x9519;&#x4E71;&#x5BFC;&#x81F4;&#x6E90;&#x4EE3;&#x7801;&#x88AB;&#x6CE8;&#x91CA;</em> 
 </li>
 <li>&#x5E03;&#x5C40;&#xFF1A;&#x76EE;&#x7684;&#x662F;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x65B9;&#x4FBF;&#x4E66;&#x5199;&#x4E0E;&#x9605;&#x8BFB;&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;&#x7B80;&#x5355;&#x7684;&#x793A;&#x4F8B;&#xFF1A;
 </li></ul>
-<h4 id="&#x6587;&#x4EF6;&#x5E03;&#x5C40;">&#x6587;&#x4EF6;&#x5E03;&#x5C40;</h4><pre><code>/* &#x9996;&#x5148;&#x662F;&#x5E93;&#x6587;&#x4EF6;.. */
-#include &lt;stdlib.h&gt;
+<h4 id="&#x6587;&#x4EF6;&#x5E03;&#x5C40;">&#x6587;&#x4EF6;&#x5E03;&#x5C40;</h4><pre><code>/* &#x9996;&#x5148;&#x662F;&#x5E93;&#x6587;&#x4EF6;<span class="token punctuation">..</span> */
+<span class="token comment" spellcheck="true">#include &lt;stdlib.h&gt;</span>
 
-/* ...&#x7D27;&#x63A5;&#x7740;&#x662F;freeRTOS&#x81EA;&#x8EAB;&#x7684;&#x5934;&#x6587;&#x4EF6;&#x5305;&#x542B;... */
-#include &quot;FreeRTOS.h&quot;
+/* <span class="token punctuation">..</span>.&#x7D27;&#x63A5;&#x7740;&#x662F;freeRTOS&#x81EA;&#x8EAB;&#x7684;&#x5934;&#x6587;&#x4EF6;&#x5305;&#x542B;<span class="token punctuation">..</span>. */
+<span class="token comment" spellcheck="true">#include &quot;FreeRTOS.h&quot;</span>
 
-/* ...&#x5176;&#x4ED6;&#x5934;&#x6587;&#x4EF6;. */
-#include &quot;HardwareSpecifics.h&quot;
+/* <span class="token punctuation">..</span>.&#x5176;&#x4ED6;&#x5934;&#x6587;&#x4EF6;. */
+<span class="token comment" spellcheck="true">#include &quot;HardwareSpecifics.h&quot;</span>
 
-/* #defines &#x5B8F;&#x5B9A;&#x4E49;&#xFF0C;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x4F7F;&#x7528;&#x62EC;&#x53F7;&#xFF0C;&#x9632;&#x6B62;&#x8FB9;&#x754C;&#x6548;&#x5E94;. */
-#define A_DEFINITION    ( 1 )
+/* <span class="token comment" spellcheck="true">#defines &#x5B8F;&#x5B9A;&#x4E49;&#xFF0C;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x4F7F;&#x7528;&#x62EC;&#x53F7;&#xFF0C;&#x9632;&#x6B62;&#x8FB9;&#x754C;&#x6548;&#x5E94;. */</span>
+<span class="token comment" spellcheck="true">#define A_DEFINITION    ( 1 )</span>
 
 /*
  * static&#x9650;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#x4F5C;&#x7528;&#x57DF;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x90E8;&#x5206;&#x7684;&#x6CE8;&#x91CA;&#x98CE;&#x683C;&#x662F;&#x6BCF;&#x884C;
  * &#x90FD;&#x662F;&#x4EE5;&#x2018;*&#x2019;&#x5F00;&#x5934;.
  */
-static void prvAFunction( uint32_t ulParameter );
+static void prvAFunction<span class="token punctuation">(</span> uint32_t ulParameter <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 /* &#x6587;&#x4EF6;&#x4F5C;&#x7528;&#x57DF;&#x53D8;&#x91CF;&#xFF0C;&#x6CE8;&#x91CA;&#x98CE;&#x683C;&#x4E0E;&#x6587;&#x4EF6;&#x4F5C;&#x7528;&#x57DF;&#x51FD;&#x6570;&#x4E0D;&#x540C;&#xFF0C;&#x6BCF;&#x884C;
 &#x4E0D;&#x5728;&#x4EE5;&#x2018;*&#x2019;&#x5F00;&#x5934;*/
@@ -483,60 +515,60 @@ static BaseType_t xMyVariable.
 
 /*-----------------------------------------------------------*/
 
-void vAFunction( void )
-{
+void vAFunction<span class="token punctuation">(</span> void <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
     /* &#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x653E;&#x5728;&#x8FD9;&#xFF0C;&#x6CE8;&#x610F;&#x5C06;&#x82B1;&#x62EC;&#x53F7;&#x95ED;&#x5408; */
-}
+<span class="token punctuation">}</span>
 /*-----------------------------------------------------------*/
 
-static UBaseType_t prvNextFunction( void )
-{
+static UBaseType_t prvNextFunction<span class="token punctuation">(</span> void <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
     /* &#x51FD;&#x6570;&#x5B9A;&#x4E49;. */
-}
+<span class="token punctuation">}</span>
 /*-----------------------------------------------------------*/</code></pre>
 <h4 id="c&#x6587;&#x4EF6;&#x683C;&#x5F0F;">C&#x6587;&#x4EF6;&#x683C;&#x5F0F;</h4><pre><code>/* &#x51FD;&#x6570;&#x540D;&#x79F0;&#x603B;&#x662F;&#x5199;&#x5728;&#x4E00;&#x884C;&#xFF0C;&#x5305;&#x62EC;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x3002; &#x5DE6;&#x62EC;&#x53F7;&#x4E4B;&#x524D;&#x6CA1;&#x6709;&#x7A7A;&#x683C;&#xFF0C;&#x5DE6;&#x62EC;&#x53F7;&#x4E4B;&#x540E;
 &#x6709;&#x7A7A;&#x683C;&#xFF0C;&#x6BCF;&#x4E2A;&#x9017;&#x53F7;&#x540E;&#x6709;&#x7A7A;&#x683C;&#x3002;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x8BE6;&#x5C3D;&#x7ED9;&#x51FA;&#xFF0C;&#x63CF;&#x8FF0;&#x6027;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x81EA;&#x89E3;&#x91CA;&#x3002;&#x5982;&#x679C;&#x62EC;&#x53F7;
 &#x4E0D;&#x5728;&#x540C;&#x4E00;&#x884C;&#xFF0C;&#x6BCF;&#x884C;&#x6392;&#x5F00;&#xFF0C;&#x5217;&#x5BF9;&#x9F50;*/
-void vAnExampleFunction( long lParameter1, unsigned short usParameter2 )
-{
+void vAnExampleFunction<span class="token punctuation">(</span> long lParameter1, unsigned short usParameter2 <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
 /* &#x53D8;&#x91CF;&#x58F0;&#x660E;&#x4E0D;&#x9700;&#x8981;&#x7F29;&#x8FDB; */
-uint8_t ucByte;
+uint8_t ucByte<span class="token punctuation">;</span>
 
     /* &#x4EE3;&#x7801;&#x7F29;&#x8FDB;&#xFF0C;&#x82B1;&#x62EC;&#x53F7;&#x72EC;&#x5360;&#x4E00;&#x884C;&#xFF0C;&#x5217;&#x5BF9;&#x9F50;*/
-    for( ucByte = 0U; ucByte &lt; fileBUFFER_LENGTH; ucByte++ )
-    {
+    for<span class="token punctuation">(</span> ucByte <span class="token operator">=</span> 0U<span class="token punctuation">;</span> ucByte <span class="token operator">&lt;</span> fileBUFFER_LENGTH<span class="token punctuation">;</span> ucByte++ <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
         /* &#x518D;&#x6B21;&#x7F29;&#x8FDB;. */
-    }
-}
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-/* for while do &#x548C; if&#x8BED;&#x53E5;&#x6709;&#x76F8;&#x540C;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x5DE6;&#x62EC;&#x53F7;&#x540E;&#x6709;&#x7A7A;&#x683C;&#xFF0C;&#x53F3;&#x62EC;&#x53F7;&#x524D;&#x6709;&#x7A7A;&#x9694;&#xFF0C;
+/* <span class="token keyword">for</span> <span class="token keyword">while</span> <span class="token keyword">do</span> &#x548C; if&#x8BED;&#x53E5;&#x6709;&#x76F8;&#x540C;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x5DE6;&#x62EC;&#x53F7;&#x540E;&#x6709;&#x7A7A;&#x683C;&#xFF0C;&#x53F3;&#x62EC;&#x53F7;&#x524D;&#x6709;&#x7A7A;&#x9694;&#xFF0C;
 &#x6BCF;&#x4E2A;&#x5206;&#x53F7;&#x540E;&#x6709;&#x7A7A;&#x683C;&#xFF0C;&#x64CD;&#x4F5C;&#x7B26;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x663E;&#x5F0F;&#x8868;&#x73B0;&#x51FA;&#x6765;&#xFF0C;&#x4E0D;&#x8981;&#x4F9D;&#x8D56;&#x9ED8;&#x8BA4;&#x4F18;&#x5148;&#x7EA7;*/
-for( ucByte = 0U; ucByte &lt; fileBUFFER_LENGTH; ucByte++ )
-{
-}
+for<span class="token punctuation">(</span> ucByte <span class="token operator">=</span> 0U<span class="token punctuation">;</span> ucByte <span class="token operator">&lt;</span> fileBUFFER_LENGTH<span class="token punctuation">;</span> ucByte++ <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
 
-while( ucByte &lt; fileBUFFER_LENGTH )
-{
-}
+while<span class="token punctuation">(</span> ucByte <span class="token operator">&lt;</span> fileBUFFER_LENGTH <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
 
 /* &#x4E0D;&#x8981;&#x4F9D;&#x9760;&#x64CD;&#x4F5C;&#x7B26;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x6BCF;&#x4E2A;&#x6761;&#x4EF6;&#x7528;&#x62EC;&#x53F7;&#x5305;&#x542B; */
-if( ( ucByte &lt; fileBUFFER_LENGTH ) &amp;&amp; ( ucByte != 0U ) )
-{
+if<span class="token punctuation">(</span> <span class="token punctuation">(</span> ucByte <span class="token operator">&lt;</span> fileBUFFER_LENGTH <span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span> ucByte <span class="token operator">!=</span> 0U <span class="token punctuation">)</span> <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
     /* &#x4E0D;&#x4F9D;&#x8D56;&#x64CD;&#x4F5C;&#x7B26;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x4F8B;&#x5B50; */
-    ulResult = ( ( ulValue1 + ulValue2 ) - ulValue3 ) * ulValue4;
-}
+    ulResult <span class="token operator">=</span> <span class="token punctuation">(</span> <span class="token punctuation">(</span> ulValue1 + ulValue2 <span class="token punctuation">)</span> - ulValue3 <span class="token punctuation">)</span> * ulValue4<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 /* &#x6761;&#x4EF6;&#x7F16;&#x8BD1;&#x5217;&#x51FA;&#x6765;&#xFF0C;&#x5E76;&#x6309;&#x7167;&#x4EE3;&#x7801;&#x7F29;&#x8FDB;&#x98CE;&#x683C;*/
-#if( configUSE_TRACE_FACILITY == 1 )
-{
+<span class="token comment" spellcheck="true">#if( configUSE_TRACE_FACILITY == 1 )</span>
+<span class="token punctuation">{</span>
     /* &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x8DDF;&#x8E2A;&#x7684;&#x8BA1;&#x6570;&#x5668;&#x5230;TCB. */
-    pxNewTCB-&gt;uxTCBNumber = uxTaskNumber;
-}
-#endif
+    pxNewTCB-<span class="token operator">&gt;</span>uxTCBNumber <span class="token operator">=</span> uxTaskNumber<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">#endif</span>
 
 /*&#x5DE6;&#x65B9;&#x62EC;&#x53F7;&#x540E;&#x7A7A;&#x683C;&#xFF0C;&#x53F3;&#x65B9;&#x62EC;&#x53F7;&#x524D;&#x7A7A;&#x683C;*/
-ucBuffer[ 0 ] = 0U;
-ucBuffer[ fileBUFFER_LENGTH - 1U ] = 0U;</code></pre>
+ucBuffer<span class="token punctuation">[</span> 0 <span class="token punctuation">]</span> <span class="token operator">=</span> 0U<span class="token punctuation">;</span>
+ucBuffer<span class="token punctuation">[</span> fileBUFFER_LENGTH - 1U <span class="token punctuation">]</span> <span class="token operator">=</span> 0U<span class="token punctuation">;</span></code></pre>
 
                                 
                                 </section>
@@ -580,7 +612,7 @@ ucBuffer[ fileBUFFER_LENGTH - 1U ] = 0U;</code></pre>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"编码规则和风格","level":"1.2.1","depth":2,"next":{"title":"许可","level":"1.2.2","depth":2,"path":"简介/许可.md","ref":"简介/许可.md","articles":[]},"previous":{"title":"简介","level":"1.2","depth":1,"path":"简介/freeRTOS介绍.md","ref":"简介/freeRTOS介绍.md","articles":[{"title":"编码规则和风格","level":"1.2.1","depth":2,"path":"简介/编码规则和风格.md","ref":"简介/编码规则和风格.md","articles":[]},{"title":"许可","level":"1.2.2","depth":2,"path":"简介/许可.md","ref":"简介/许可.md","articles":[]},{"title":"快速开始指南","level":"1.2.3","depth":2,"path":"简介/快速开始指南.md","ref":"简介/快速开始指南.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-comscore"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"sitemap-general":{"prefix":"https://cyberzhg.gitbooks.io/clrs_solution/content/"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"mobi":{"fontSize":12,"footerTemplate":null,"headerTemplate":null,"margin":{"bottom":36,"left":62,"right":62,"top":36},"pageNumbers":false,"paperSize":"a4"},"theme":"default","author":"tangguocheng","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"freeRTOS中文文档","language":"Chinese","links":{"sidebar":{"博客":"http://www.xn--4gqa63c686ta68iba.ren/"}},"gitbook":"*","description":"freeRTOS中文文档","extension":null},"file":{"path":"简介/编码规则和风格.md","mtime":"2016-08-29T02:09:49.224Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-29T03:28:53.428Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"编码规则和风格","level":"1.2.1","depth":2,"next":{"title":"许可","level":"1.2.2","depth":2,"path":"简介/许可.md","ref":"简介/许可.md","articles":[]},"previous":{"title":"简介","level":"1.2","depth":1,"path":"简介/freeRTOS介绍.md","ref":"简介/freeRTOS介绍.md","articles":[{"title":"编码规则和风格","level":"1.2.1","depth":2,"path":"简介/编码规则和风格.md","ref":"简介/编码规则和风格.md","articles":[]},{"title":"许可","level":"1.2.2","depth":2,"path":"简介/许可.md","ref":"简介/许可.md","articles":[]},{"title":"快速开始指南","level":"1.2.3","depth":2,"path":"简介/快速开始指南.md","ref":"简介/快速开始指南.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prismx","-highlight","duoshuo","ga","theme-comscore"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"duoshuo":{"short_name":"tangguocheng","theme":"default"},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"prismx":{"css":["prismjs/themes/prism-tomorrow.css"]},"ga":{"configuration":"auto","token":"UA-80700049-1"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"mobi":{"fontSize":12,"footerTemplate":null,"headerTemplate":null,"margin":{"bottom":36,"left":62,"right":62,"top":36},"pageNumbers":false,"paperSize":"a4"},"theme":"default","author":"tangguocheng","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"freeRTOS中文文档","language":"Chinese","links":{"sidebar":{"博客":"http://www.xn--4gqa63c686ta68iba.ren/"}},"gitbook":"*","description":"freeRTOS中文文档","extension":null},"file":{"path":"简介/编码规则和风格.md","mtime":"2016-08-29T02:09:49.224Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-29T08:06:44.199Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -588,6 +620,14 @@ ucBuffer[ fileBUFFER_LENGTH - 1U ] = 0U;</code></pre>
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-duoshuo/duoshuo.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
