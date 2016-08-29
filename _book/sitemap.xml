@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url> <loc>https://cyberzhg.gitbooks.io/clrs_solution/content/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cyberzhg.gitbooks.io/clrs_solution/content/简介/freeRTOS介绍.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cyberzhg.gitbooks.io/clrs_solution/content/简介/编码规则和风格.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cyberzhg.gitbooks.io/clrs_solution/content/简介/许可.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cyberzhg.gitbooks.io/clrs_solution/content/简介/快速开始指南.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cyberzhg.gitbooks.io/clrs_solution/content/入门/readme.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cyberzhg.gitbooks.io/clrs_solution/content/入门/任务和协程/readme.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cyberzhg.gitbooks.io/clrs_solution/content/入门/任务和协程/任务.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cyberzhg.gitbooks.io/clrs_solution/content/入门/任务和协程/协程.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cyberzhg.gitbooks.io/clrs_solution/content/入门/通信机制/readme.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cyberzhg.gitbooks.io/clrs_solution/content/入门/通信机制/队列.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cyberzhg.gitbooks.io/clrs_solution/content/入门/通信机制/计数信号量.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cyberzhg.gitbooks.io/clrs_solution/content/入门/通信机制/互斥量.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cyberzhg.gitbooks.io/clrs_solution/content/入门/通信机制/递归互斥量.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cyberzhg.gitbooks.io/clrs_solution/content/入门/通信机制/任务通知.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cyberzhg.gitbooks.io/clrs_solution/content/入门/事件组/事件组.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://cyberzhg.gitbooks.io/clrs_solution/content/入门/软件定时器/软件定时器.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+</urlset>

@@ -1,17 +1,11 @@
 {
     "title": "freeRTOS中文文档",
     "author": "tangguocheng",
-    "description": "_",
+    "description": "freeRTOS中文文档",
     "extension": null,
+    "language": "Chinese",
     "generator": "website",
     "links": {
-        "sharing": {
-            "all": null,
-            "facebook": null,
-            "google": null,
-            "twitter": null,
-            "weibo": null
-        },
         "sidebar": {
             "博客": "http://www.xn--4gqa63c686ta68iba.ren/"
         }
@@ -52,9 +46,9 @@
     },  
     "plugins": ["sitemap-general","theme-comscore"],
     "pluginsConfig": {
-         "sitemap-general": {
-            "prefix": "https://cyberzhg.gitbooks.io/clrs_solution/content/"
-        }
+         	"sitemap-general": {
+            	"prefix": "https://cyberzhg.gitbooks.io/clrs_solution/content/"
+       		}
     },
     "variables": {}
 }

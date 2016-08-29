@@ -1,0 +1,525 @@
+
+<!DOCTYPE HTML>
+<html lang="Chinese" >
+    <head>
+        <title>任务和协程 · freeRTOS中文文档</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="author" content="tangguocheng">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="任务.html" />
+    
+    
+    <link rel="prev" href="../readme.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.xn--4gqa63c686ta68iba.ren/" target="_blank" class="custom-link">博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    关于
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../简介/freeRTOS介绍.html">
+            
+                <a href="../../简介/freeRTOS介绍.html">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../简介/编码规则和风格.html">
+            
+                <a href="../../简介/编码规则和风格.html">
+            
+                    
+                    编码规则和风格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../简介/许可.html">
+            
+                <a href="../../简介/许可.html">
+            
+                    
+                    许可
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../简介/快速开始指南.html">
+            
+                <a href="../../简介/快速开始指南.html">
+            
+                    
+                    快速开始指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../readme.html">
+            
+                <a href="../readme.html">
+            
+                    
+                    入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    任务和协程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="任务.html">
+            
+                <a href="任务.html">
+            
+                    
+                    任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="协程.html">
+            
+                <a href="协程.html">
+            
+                    
+                    协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../通信机制/readme.html">
+            
+                <a href="../通信机制/readme.html">
+            
+                    
+                    通信机制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../通信机制/readme.html">
+            
+                <a href="../通信机制/readme.html">
+            
+                    
+                    队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../通信机制/队列.html">
+            
+                <a href="../通信机制/队列.html">
+            
+                    
+                    二值信号量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../通信机制/计数信号量.html">
+            
+                <a href="../通信机制/计数信号量.html">
+            
+                    
+                    计数信号量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../通信机制/互斥量.html">
+            
+                <a href="../通信机制/互斥量.html">
+            
+                    
+                    互斥量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../通信机制/递归互斥量.html">
+            
+                <a href="../通信机制/递归互斥量.html">
+            
+                    
+                    递归互斥量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../通信机制/任务通知.html">
+            
+                <a href="../通信机制/任务通知.html">
+            
+                    
+                    任务通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../事件组/事件组.html">
+            
+                <a href="../事件组/事件组.html">
+            
+                    
+                    事件组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../软件定时器/软件定时器.html">
+            
+                <a href="../软件定时器/软件定时器.html">
+            
+                    
+                    软件定时器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >任务和协程</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x8FD9;&#x91CC;&#x5C06;&#x4ECB;&#x7ECD;&#x4EFB;&#x52A1;(<code>task</code>)&#x4E0E;&#x534F;&#x7A0B;(<code>co-routines</code>)&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x636E;&#x6B64;&#x5224;&#x65AD;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x8BE5;&#x4F7F;&#x7528;&#x534F;&#x7A0B;&#xFF0C;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x8BE5;&#x4F7F;&#x7528;&#x4EFB;&#x52A1;&#xFF0C;&#x6216;&#x4E24;&#x8005;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;<strong>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5C3D;&#x7BA1;&#x4E8C;&#x8005;&#x4F7F;&#x7528;&#x7684;API&#x4E0D;&#x540C;&#xFF0C;&#x4F46;&#x662F;&#x5374;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x961F;&#x5217;&#x6216;&#x8005;&#x4FE1;&#x53F7;&#x91CF;&#x6765;&#x76F8;&#x4E92;&#x4F20;&#x9012;&#x6570;&#x636E;&#x3002;</strong>
+&#x5BF9;&#x4E8E;&#x534F;&#x7A0B;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x4EC5;&#x4EC5;&#x9488;&#x5BF9;&#x90A3;&#x4E9B;RAM&#x7A7A;&#x95F4;&#x5F88;&#x5C0F;&#x7684;&#x5D4C;&#x5165;&#x5F0F;&#x7CFB;&#x7EDF;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x3002;</p><h2 id="&#x4EFB;&#x52A1;&#x7684;&#x7279;&#x70B9;">&#x4EFB;&#x52A1;&#x7684;&#x7279;&#x70B9;</h2><p>&#x4F7F;&#x7528;RTOS&#x6784;&#x5EFA;&#x7684;&#x5B9E;&#x65F6;&#x5E94;&#x7528;&#x662F;&#x6709;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x4EFB;&#x52A1;&#x7EC4;&#x6210;&#xFF0C;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x5404;&#x81EA;&#x62E5;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x5806;&#x6808;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x81EA;&#x5DF1;&#x7684;&#x8FD0;&#x884C;&#x4E0A;&#x4E0B;&#x6587;(<code>context</code>)&#x3002;&#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x95F4;&#xFF0C;&#x6709;&#x4E14;&#x4EC5;&#x6709;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x5728;&#x6267;&#x884C;&#x3002;&#x5177;&#x4F53;&#x54EA;&#x4E2A;&#x4EFB;&#x52A1;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#xFF0C;&#x5219;&#x7531;&#x8C03;&#x5EA6;&#x5668;(<code>scheduler</code>)&#x51B3;&#x5B9A;&#x3002;&#x5F53;&#x4EFB;&#x52A1;&#x5207;&#x6362;&#x540E;&#xFF0C;&#x76F8;&#x5E94;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x4E5F;&#x4F1A;&#x505A;&#x76F8;&#x5E94;&#x7684;&#x5207;&#x5165;&#x5207;&#x51FA;&#x3002;&#x4EFB;&#x52A1;&#x5177;&#x6709;&#x4EE5;&#x4E0B;&#x7279;&#x70B9;&#xFF1A;</p><ul><li>&#x7B80;&#x5355;
+</li>
+<li>&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x4E0A;&#x7684;&#x9650;&#x5236;
+</li>
+<li>&#x652F;&#x6301;&#x62A2;&#x5360;&#x5F0F;
+</li>
+<li>&#x4F18;&#x5148;&#x7EA7;&#x81F3;&#x4E0A;
+</li>
+<li>&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x62E5;&#x6709;&#x72EC;&#x7ACB;&#x5806;&#x6808;&#xFF0C;&#x9020;&#x6210;RAM&#x5360;&#x7528;&#x8FC7;&#x9AD8;
+</li>
+<li>&#x91CD;&#x5165;&#x5728;&#x62A2;&#x5360;&#x5F0F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x9700;&#x8981;&#x989D;&#x5916;&#x6CE8;&#x610F;
+</li></ul>
+<h2 id="&#x534F;&#x7A0B;&#x7684;&#x7279;&#x70B9;">&#x534F;&#x7A0B;&#x7684;&#x7279;&#x70B9;</h2><p>&#x5982;&#x524D;&#x6240;&#x8FF0;&#xFF0C;&#x534F;&#x7A0B;&#x7684;&#x8BBE;&#x8BA1;&#x521D;&#x8877;&#x662F;&#x4E3A;&#x4E86;&#x90A3;&#x4E9B;&#x5185;&#x5B58;&#x8F83;&#x5C0F;&#x7684;&#x8BBE;&#x5907;&#x51C6;&#x5907;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x4ECA;&#x589E;&#x5F3A;&#x578B;&#x7684;51RAM&#x90FD;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x51E0;&#x5341;K&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x534F;&#x7A0B;&#x4F7F;&#x7528;&#x7684;&#x5FC5;&#x8981;&#x5176;&#x5B9E;&#x662F;&#x8D8A;&#x6765;&#x8D8A;&#x5C0F;&#x7684;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x534F;&#x7A0B;&#x8FD9;&#x4E00;&#x673A;&#x5236;&#x4ECD;&#x7136;&#x88AB;&#x4FDD;&#x7559;&#x4E0B;&#x6765;&#xFF0C;freeRTOS&#x5B98;&#x65B9;&#x540E;&#x7EED;&#x867D;&#x7136;&#x6CA1;&#x6709;&#x79FB;&#x9664;&#x534F;&#x7A0B;&#x7684;&#x8BA1;&#x5212;&#xFF0C;&#x4F46;&#x662F;&#x4E5F;&#x662F;&#x4E0D;&#x4F1A;&#x518D;&#x53BB;&#x5F00;&#x53D1;&#x4E86;&#x3002;
+&#x534F;&#x7A0B;&#x4E0E;&#x4EFB;&#x52A1;&#x5728;&#x6982;&#x5FF5;&#x4E0A;&#x662F;&#x76F8;&#x4F3C;&#x7684;&#xFF1A;</p><ol><li><p>&#x5806;&#x6808;&#x5229;&#x7528;
+&#x591A;&#x6709;&#x7684;&#x534F;&#x7A0B;&#x5728;&#x7CFB;&#x7EDF;&#x5185;&#x5171;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x5806;&#x6808;&#xFF0C;&#x76F8;&#x6BD4;&#x4F7F;&#x7528;&#x4EFB;&#x52A1;&#x8282;&#x7701;&#x4E86;&#x5F88;&#x591A;&#x7684;&#x5185;&#x5B58;&#x5360;&#x7528;&#x3002;</p></li>
+<li><p>&#x4F18;&#x5148;&#x7EA7;&#x53CA;&#x8C03;&#x5EA6;
+Co-routines use prioritised cooperative scheduling with respect to other co-routines, but can be included in an application that uses preemptive tasks</p></li>
+<li><p>&#x5B8F;&#x5B9E;&#x73B0;
+&#x534F;&#x7A0B;&#x662F;&#x7531;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x5B8F;&#x5B9E;&#x73B0;&#x7684;</p></li>
+<li><p>&#x4F7F;&#x7528;&#x9650;&#x5236;
+&#x51CF;&#x5C11;&#x5185;&#x5B58;&#x5360;&#x7528;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x5BF9;&#x534F;&#x7A0B;&#x7684;&#x4F7F;&#x7528;&#x4E5F;&#x5B58;&#x5728;&#x4E00;&#x4E9B;&#x9650;&#x5236;</p></li></ol>
+<p>&#x534F;&#x7A0B;&#x5177;&#x6709;&#x5982;&#x4E0B;&#x7279;&#x70B9;&#xFF1A;</p><ul><li>&#x5171;&#x7528;&#x540C;&#x4E00;&#x5806;&#x6808;&#xFF0C;&#x51CF;&#x5C11;&#x5185;&#x5B58;&#x5360;&#x7528;
+</li>
+<li>&#x534F;&#x7A0B;&#x4F7F;&#x5F97;&#x91CD;&#x5165;&#x53D8;&#x5C11;
+</li>
+<li>&#x5728;&#x5404;&#x79CD;&#x67B6;&#x6784;&#x4E0A;&#x90FD;&#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x79FB;&#x690D;
+</li>
+<li>&#x534F;&#x7A0B;&#x4E4B;&#x95F4;&#x4E5F;&#x662F;&#x901A;&#x8FC7;&#x4F18;&#x5148;&#x7EA7;&#x8C03;&#x5EA6;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x4E0E;&#x4EFB;&#x52A1;&#x6DF7;&#x7528;&#xFF0C;&#x603B;&#x662F;&#x4F1A;&#x88AB;&#x4EFB;&#x52A1;&#x62A2;&#x5360;
+</li>
+<li>&#x5806;&#x6808;&#x7A7A;&#x95F4;&#x532E;&#x4E4F;&#x9700;&#x8981;&#x989D;&#x5916;&#x6168;&#x7387;
+</li>
+<li>API&#x8C03;&#x7528;&#x7684;&#x4F4D;&#x7F6E;&#x5B58;&#x5728;&#x9650;&#x5236;
+</li>
+<li>Co-operative operation only amongst co-routines themselves.
+</li></ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../readme.html" class="navigation navigation-prev " aria-label="Previous page: 入门">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="任务.html" class="navigation navigation-next " aria-label="Next page: 任务">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"任务和协程","level":"1.3.1","depth":2,"next":{"title":"任务","level":"1.3.1.1","depth":3,"path":"入门/任务和协程/任务.md","ref":"入门/任务和协程/任务.md","articles":[]},"previous":{"title":"入门","level":"1.3","depth":1,"path":"入门/readme.md","ref":"入门/readme.md","articles":[{"title":"任务和协程","level":"1.3.1","depth":2,"path":"入门/任务和协程/readme.md","ref":"入门/任务和协程/readme.md","articles":[{"title":"任务","level":"1.3.1.1","depth":3,"path":"入门/任务和协程/任务.md","ref":"入门/任务和协程/任务.md","articles":[]},{"title":"协程","level":"1.3.1.2","depth":3,"path":"入门/任务和协程/协程.md","ref":"入门/任务和协程/协程.md","articles":[]}]},{"title":"通信机制","level":"1.3.2","depth":2,"path":"入门/通信机制/readme.md","ref":"入门/通信机制/readme.md","articles":[{"title":"队列","level":"1.3.2.1","depth":3,"path":"入门/通信机制/readme.md","ref":"入门/通信机制/readme.md","articles":[]},{"title":"二值信号量","level":"1.3.2.2","depth":3,"path":"入门/通信机制/队列.md","ref":"入门/通信机制/队列.md","articles":[]},{"title":"计数信号量","level":"1.3.2.3","depth":3,"path":"入门/通信机制/计数信号量.md","ref":"入门/通信机制/计数信号量.md","articles":[]},{"title":"互斥量","level":"1.3.2.4","depth":3,"path":"入门/通信机制/互斥量.md","ref":"入门/通信机制/互斥量.md","articles":[]},{"title":"递归互斥量","level":"1.3.2.5","depth":3,"path":"入门/通信机制/递归互斥量.md","ref":"入门/通信机制/递归互斥量.md","articles":[]},{"title":"任务通知","level":"1.3.2.6","depth":3,"path":"入门/通信机制/任务通知.md","ref":"入门/通信机制/任务通知.md","articles":[]}]},{"title":"事件组","level":"1.3.3","depth":2,"path":"入门/事件组/事件组.md","ref":"入门/事件组/事件组.md","articles":[]},{"title":"软件定时器","level":"1.3.4","depth":2,"path":"入门/软件定时器/软件定时器.md","ref":"入门/软件定时器/软件定时器.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-comscore"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"sitemap-general":{"prefix":"https://cyberzhg.gitbooks.io/clrs_solution/content/"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"mobi":{"fontSize":12,"footerTemplate":null,"headerTemplate":null,"margin":{"bottom":36,"left":62,"right":62,"top":36},"pageNumbers":false,"paperSize":"a4"},"theme":"default","author":"tangguocheng","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"freeRTOS中文文档","language":"Chinese","links":{"sidebar":{"博客":"http://www.xn--4gqa63c686ta68iba.ren/"}},"gitbook":"*","description":"freeRTOS中文文档","extension":null},"file":{"path":"入门/任务和协程/readme.md","mtime":"2016-08-29T00:47:32.766Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-29T03:28:53.428Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

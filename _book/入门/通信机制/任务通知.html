@@ -1,0 +1,754 @@
+
+<!DOCTYPE HTML>
+<html lang="Chinese" >
+    <head>
+        <title>任务通知 · freeRTOS中文文档</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="author" content="tangguocheng">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../事件组/事件组.html" />
+    
+    
+    <link rel="prev" href="递归互斥量.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.xn--4gqa63c686ta68iba.ren/" target="_blank" class="custom-link">博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    关于
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../简介/freeRTOS介绍.html">
+            
+                <a href="../../简介/freeRTOS介绍.html">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../简介/编码规则和风格.html">
+            
+                <a href="../../简介/编码规则和风格.html">
+            
+                    
+                    编码规则和风格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../简介/许可.html">
+            
+                <a href="../../简介/许可.html">
+            
+                    
+                    许可
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../简介/快速开始指南.html">
+            
+                <a href="../../简介/快速开始指南.html">
+            
+                    
+                    快速开始指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../readme.html">
+            
+                <a href="../readme.html">
+            
+                    
+                    入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../任务和协程/readme.html">
+            
+                <a href="../任务和协程/readme.html">
+            
+                    
+                    任务和协程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../任务和协程/任务.html">
+            
+                <a href="../任务和协程/任务.html">
+            
+                    
+                    任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../任务和协程/协程.html">
+            
+                <a href="../任务和协程/协程.html">
+            
+                    
+                    协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    通信机制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="队列.html">
+            
+                <a href="队列.html">
+            
+                    
+                    二值信号量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="计数信号量.html">
+            
+                <a href="计数信号量.html">
+            
+                    
+                    计数信号量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="互斥量.html">
+            
+                <a href="互斥量.html">
+            
+                    
+                    互斥量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="递归互斥量.html">
+            
+                <a href="递归互斥量.html">
+            
+                    
+                    递归互斥量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2.6" data-path="任务通知.html">
+            
+                <a href="任务通知.html">
+            
+                    
+                    任务通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../事件组/事件组.html">
+            
+                <a href="../事件组/事件组.html">
+            
+                    
+                    事件组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../软件定时器/软件定时器.html">
+            
+                <a href="../软件定时器/软件定时器.html">
+            
+                    
+                    软件定时器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >任务通知</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x662F;<code>8.2.0</code>&#x7248;&#x672C;&#x65B0;&#x589E;&#x52A0;&#x7684;&#x529F;&#x80FD;&#x3002;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x90FD;&#x6709;&#x4E00;&#x4E2A;32bit&#x7684;&quot;&#x901A;&#x77E5;&#x503C;&quot;(<code>notification value</code>)&#x3002;RTOS&#x7684;&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x662F;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x53D1;&#x9001;&#x5230;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x8BE5;&#x4EFB;&#x52A1;&#x4ECE;&#x963B;&#x585E;&#x6001;&#x6062;&#x590D;&#x3002;&#x662F;&#x5426;&#x66F4;&#x65B0;&#x63A5;&#x6536;&#x4EFB;&#x52A1;&#x7684;&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x503C;&#x662F;&#x53EF;&#x9009;&#x7684;&#x3002;</p><p>&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;&#x66F4;&#x65B0;&#x63A5;&#x6536;&#x4EFB;&#x52A1;&#x7684;&#x901A;&#x77E5;&#x503C;&#xFF1A;</p><ul><li>&#x76F4;&#x63A5;&#x8BBE;&#x7F6E;&#x800C;&#x4E0D;&#x7528;&#x8986;&#x5199;&#x63A5;&#x6536;&#x4EFB;&#x52A1;&#x7684;&#x901A;&#x77E5;&#x503C;
+</li>
+<li>&#x8986;&#x5199;&#x63A5;&#x6536;&#x4EFB;&#x52A1;&#x7684;&#x901A;&#x77E5;&#x503C;
+</li>
+<li>&#x8BBE;&#x7F6E;&#x63A5;&#x6536;&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x503C;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;bit&#x4F4D;
+</li>
+<li>&#x589E;&#x52A0;&#x63A5;&#x6536;&#x4EFB;&#x52A1;&#x7684;&#x901A;&#x77E5;&#x503C;
+</li></ul>
+<p>&#x8FD9;&#x79CD;&#x7075;&#x6D3B;&#x6027;&#x53EF;&#x4EE5;&#x4F7F;&#x5F97;&#x4EFB;&#x52A1;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x961F;&#x5217;&#x3001;&#x4FE1;&#x53F7;&#x91CF;&#x3001;&#x4E92;&#x65A5;&#x91CF;&#x3001;&#x8BA1;&#x6570;&#x4FE1;&#x53F7;&#x91CF;&#x6216;&#x8005;&#x4E8B;&#x4EF6;&#x7EC4;&#x3002;&#x4F7F;&#x7528;&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x6062;&#x590D;&#x4E00;&#x4E2A;&#x963B;&#x585E;&#x7684;&#x4EFB;&#x52A1;&#x6BD4;&#x4F7F;&#x7528;&#x4E8C;&#x503C;&#x4FE1;&#x53F7;&#x91CF;&#x8981;&#x5FEB;45%&#x800C;&#x5176;&#x5360;&#x7528;&#x7684;&#x5185;&#x5B58;&#x4E5F;&#x66F4;&#x5C0F;&#x3002;</p><p>&#x901A;&#x77E5;&#x4F7F;&#x7528;API&#x51FD;&#x6570;<code>xTaskNotify()</code>&#x6216;<code>xTaskNotifyGive()</code>&#x6765;&#x53D1;&#x9001;&#xFF0C;&#x8FD9;&#x4E2A;&#x901A;&#x77E5;&#x5C06;&#x4E00;&#x76F4;&#x6302;&#x8D77;&#x76F4;&#x5230;&#x63A5;&#x6536;&#x4EFB;&#x52A1;&#x4F7F;&#x7528;API&#x51FD;&#x6570;<code>xTaskNotifyWait()</code>&#x6216;<code>ulTaskNotifyTake()</code>&#x6765;&#x63A5;&#x6536;&#x901A;&#x77E5;&#x3002;&#x5982;&#x679C;&#x63A5;&#x6536;&#x4EFB;&#x52A1;&#x5728;&#x901A;&#x77E5;&#x5230;&#x6765;&#x65F6;&#x5DF2;&#x7ECF;&#x88AB;&#x963B;&#x585E;&#xFF0C;&#x5219;&#x4F1A;&#x4ECE;&#x963B;&#x585E;&#x6001;&#x6062;&#x590D;&#xFF0C;&#x540C;&#x65F6;&#x901A;&#x77E5;&#x88AB;&#x6E05;&#x9664;&#x3002;</p><p>&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x9ED8;&#x8BA4;&#x65F6;&#x53EF;&#x7528;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x4E8E;&#x8282;&#x7701;&#x7A7A;&#x95F4;&#x7684;&#x8003;&#x8651;(&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x53EF;&#x4EE5;&#x8282;&#x7701;4&#x4E2A;&#x5B57;&#x8282;)&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;<code>configUSE_TASK_NOTIFICATIONS</code>&#x4E3A;0&#x6765;&#x7981;&#x7528;&#x3002;</p><h2 id="&#x4F18;&#x70B9;&#x548C;&#x9650;&#x5236;">&#x4F18;&#x70B9;&#x548C;&#x9650;&#x5236;</h2><p>&#x5728;&#x5B9E;&#x73B0;&#x540C;&#x6837;&#x76EE;&#x6807;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x5360;&#x7528;&#x7684;&#x7A7A;&#x95F4;&#x66F4;&#x5C0F;&#xFF0C;&#x901F;&#x5EA6;&#x66F4;&#x5FEB;&#x3002;&#x540C;&#x6837;&#x7684;&#xFF0C;&#x8FD9;&#x4E9B;&#x597D;&#x5904;&#x662F;&#x6709;&#x6761;&#x4EF6;&#x7684;&#xFF1A;</p><ul><li>&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x5728;&#x53EA;&#x7528;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x63A5;&#x6536;&#x4E8B;&#x4EF6;&#x7684;&#x573A;&#x5408;&#x3002;
+</li>
+<li>&#x53EA;&#x80FD;&#x5728;&#x7528;&#x6765;&#x4EE3;&#x66FF;&#x961F;&#x5217;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x3002;&#x5F53;&#x63A5;&#x6536;&#x4EFB;&#x52A1;&#x5728;&#x7B49;&#x5F85;&#x901A;&#x77E5;&#x7684;&#x65F6;&#x5019;&#x8FDB;&#x5165;&#x963B;&#x585E;&#xFF0C;&#x53D1;&#x9001;&#x4EFB;&#x52A1;&#x5982;&#x679C;&#x5728;&#x901A;&#x77E5;&#x4E0D;&#x80FD;&#x7ACB;&#x5373;&#x53D1;&#x9001;&#x5B8C;&#x6210;&#x7684;&#x65F6;&#x5019;&#x4E5F;&#x4E0D;&#x80FD;&#x8FDB;&#x5165;&#x963B;&#x585E;&#x6001;&#x3002;
+</li></ul>
+<h2 id="&#x66FF;&#x4EE3;&#x4E8C;&#x503C;&#x4FE1;&#x53F7;&#x91CF;binary-semaphore">&#x66FF;&#x4EE3;&#x4E8C;&#x503C;&#x4FE1;&#x53F7;&#x91CF;(binary semaphore)</h2><p>&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x6BD4;&#x4E8C;&#x503C;&#x4FE1;&#x53F7;&#x91CF;&#x5FEB;45%&#x5E76;&#x4E14;&#x5185;&#x5B58;&#x5360;&#x7528;&#x66F4;&#x5C0F;&#xFF0C;&#x8FD9;&#x4E2A;&#x6587;&#x6863;&#x5C06;&#x4ECB;&#x7ECD;&#x8FD9;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p><p>&#x4E8C;&#x503C;&#x4FE1;&#x53F7;&#x91CF;&#x662F;&#x6700;&#x5927;&#x6570;&#x91CF;&#x4E3A;1&#x7684;&#x4FE1;&#x53F7;&#x91CF;&#xFF0C;&#x6B63;&#x5982;&#x5176;&quot;&#x4E8C;&#x503C;&quot;&#x7684;&#x610F;&#x4E49;&#xFF0C;&#x4EFB;&#x52A1;&#x53EA;&#x6709;&#x5728;&#x4E8C;&#x503C;&#x4FE1;&#x53F7;&#x91CF;&#x6709;&#x6548;&#x7684;&#x65F6;&#x5019;&#x624D;&#x80FD;&#x83B7;&#x53D6;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E8C;&#x503C;&#x4FE1;&#x53F7;&#x91CF;&#x7684;&#x975E;&#x7A7A;&#x3002;</p><p>&#x5F53;&#x4F7F;&#x7528;&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x6765;&#x4EE3;&#x66FF;&#x4E8C;&#x503C;&#x4FE1;&#x53F7;&#x91CF;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x63A5;&#x6536;&#x4EFB;&#x52A1;&#x7684;&#x901A;&#x77E5;&#x503C;&#x88AB;&#x7528;&#x6765;&#x4EE3;&#x66FF;&#x4E8C;&#x503C;&#x4FE1;&#x53F7;&#x91CF;&#x7684;&#x8BA1;&#x6570;&#x503C;&#xFF0C;&#x6B64;&#x65F6;<code>ulTaskNotifyTake()</code>API&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x66FF;&#x4EE3;<code>xSemaphoreTake()</code>&#x3002;<code>ulTaskNotifyTake()</code>&#x7684;<code>xClearOnExit</code>&#x53C2;&#x6570;&#x88AB;&#x8BBE;&#x7F6E;&#x6210;<code>pdTRUE</code>&#xFF0C;&#x5728;&#x6BCF;&#x6B21;&#x901A;&#x77E5;&#x88AB;&#x83B7;&#x53D6;&#x540E;&#x3002;&#x8BA1;&#x6570;&#x503C;&#x8FD4;&#x56DE;0&#xFF0C;&#x4EE5;&#x6B64;&#x6765;&#x6A21;&#x62DF;&#x4E8C;&#x503C;&#x4FE1;&#x53F7;&#x91CF;&#x3002;</p><p>&#x540C;&#x7406;&#xFF0C;<code>xTaskNotifyGive()</code>&#x548C;<code>vTaskNotifyGiveFromISR()</code>&#x7528;&#x6765;&#x4EE3;&#x66FF;<code>xSemaphoreGive()</code>&#x548C;<code>xSemaphoreGiveFromISR()</code>&#x3002;</p><p>&#x4E0B;&#x9762;&#x770B;&#x4E2A;&#x6817;&#x5B50;&#xFF1A;</p><pre><code>/* &#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x5C55;&#x793A;&#x4E86;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;&#x5916;&#x8BBE;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x7684;&#x4EFB;&#x52A1;&#x3002;RTOS&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x4EFB;&#x52A1;
+&#x8D1F;&#x8D23;&#x5C06;&#x6570;&#x636E;&#x901A;&#x8FC7;DMA&#x53D1;&#x9001;&#x51FA;&#x53BB;&#xFF0C;&#x5728;&#x6570;&#x636E;&#x53D1;&#x9001;&#x5B8C;&#x6210;&#x4E4B;&#x524D;&#xFF0C;&#x4EFB;&#x52A1;&#x4F1A;&#x8FDB;&#x5165;&#x963B;&#x585E;&#x6001;&#xFF0C;&#x76F4;
+&#x5230;DMA&#x4E2D;&#x65AD;&#x53D1;&#x9001;&#x5B8C;&#x6210;&#x540E;&#x4F7F;&#x7528;&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x901A;&#x77E5;&#x4EFB;&#x52A1;&#xFF0C;&#x4ECE;&#x963B;&#x585E;&#x6001;&#x4E2D;&#x6062;&#x590D;&#x3002;*/
+
+/* &#x4FDD;&#x5B58;&#x4EFB;&#x52A1;&#x7684;&#x901A;&#x77E5;&#x53E5;&#x67C4;&#xFF0C;&#x7528;&#x6765;&#x5728;&#x4F20;&#x8F93;&#x5B8C;&#x6210;&#x540E;&#x901A;&#x77E5;&#x4EFB;&#x52A1;*/
+static TaskHandle_t xTaskToNotify = NULL;
+
+/* T&#x5916;&#x8BBE;&#x7684;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x51FD;&#x6570;. */
+void StartTransmission( uint8_t *pcData, size_t xDataLength )
+{
+    /* &#x5728;&#x6CA1;&#x6709;&#x4F20;&#x8F93;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x8FD9;&#x91CC;&#x7684;&#x4EFB;&#x52A1;&#x53E5;&#x67C4;&#x5E94;&#x8BE5;&#x662F;NULL&#xFF0C;&#x5FC5;&#x8981;&#x65F6;
+    &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E92;&#x65A5;&#x91CF;&#x5B9E;&#x73B0; */
+    configASSERT( xTaskToNotify == NULL );
+
+    /* &#x4FDD;&#x5B58;&#x4EFB;&#x52A1;&#x53E5;&#x67C4;*/
+    xTaskToNotify = xTaskGetCurrentTaskHandle();
+
+    /* &#x5F00;&#x59CB;&#x53D1;&#x9001;&#xFF0C;&#x53D1;&#x9001;&#x5B8C;&#x6210;&#x540E;&#xFF0C;DMA&#x4F1A;&#x63D0;&#x8D77;&#x4E2D;&#x65AD;. */
+    vStartTransmit( pcData, xDatalength );
+}
+/*-----------------------------------------------------------*/
+
+/* DMA&#x4E2D;&#x65AD;. */
+void vTransmitEndISR( void )
+{
+BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+    /* &#x4F20;&#x8F93;&#x4EFB;&#x52A1;&#x53E5;&#x67C4;&#x5E94;&#x8BE5;&#x4E0D;&#x662F;NULL&#xFF0C;&#x56E0;&#x4E3A;&#x662F;&#x4EFB;&#x52A1;&#x53D1;&#x8D77;&#x7684;*/
+    configASSERT( xTaskToNotify != NULL );
+
+    /* &#x901A;&#x77E5;&#x4EFB;&#x52A1;&#x53D1;&#x9001;&#x5B8C;&#x6210; */
+    vTaskNotifyGiveFromISR( xTaskToNotify, &amp;xHigherPriorityTaskWoken );
+
+    /* &#x590D;&#x4F4D;&#x4EFB;&#x52A1;&#x53E5;&#x67C4; */
+    xTaskToNotify = NULL;
+
+    /* &#x5982;&#x679C;xHigherPriorityTaskWoken&#x88AB;&#x8BBE;&#x7F6E;&#x6210;pdTRUE&#x610F;&#x5473;&#x7740;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4E0A;&#x4E0B;&#x6587;
+    &#x5207;&#x6362;&#xFF0C;&#x5219;&#x8C03;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x5B8F;&#x6765;&#x5B8C;&#x6210;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#xFF0C;&#x5728;&#x4E2D;&#x65AD;&#x9000;&#x51FA;&#x540E;&#x80FD;&#x53CA;&#x65F6;&#x5207;&#x6362;&#x5230;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x4EFB;&#x52A1;&#x4E2D;*/
+    portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+}
+/*-----------------------------------------------------------*/
+
+/* &#x4EFB;&#x52A1;&#x53D1;&#x8D77;&#x4F20;&#x8F93;&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x5165;&#x963B;&#x585E;&#x6001;&#xFF0C;&#x6B64;&#x65F6;&#x4E0D;&#x5360;&#x7528;CPU&#x65F6;&#x95F4;*/
+void vAFunctionCalledFromATask( uint8_t ucDataToTransmit, size_t xDataLength )
+{
+uint32_t ulNotificationValue;
+const TickType_t xMaxBlockTime = pdMS_TO_TICKS( 200 );
+
+    /* &#x5F00;&#x59CB;&#x4F20;&#x8F93; */
+    StartTransmission( ucDataToTransmit, xDataLength );
+
+    /* &#x7B49;&#x5F85;&#x4EFB;&#x52A1;&#x4F20;&#x8F93;&#x5B8C;&#x6210;&#x53D1;&#x51FA;&#x901A;&#x77E5;&#xFF0C;&#x8FDB;&#x5165;&#x963B;&#x585E;&#x6001;&#x3002;&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x88AB;
+    &#x8BBE;&#x7F6E;&#x4E3A; pdTRUE &#xFF0C;&#x610F;&#x5473;&#x7740;&#x901A;&#x77E5;&#x5728;&#x88AB;&#x83B7;&#x53D6;&#x4E4B;&#x540E;&#x4F1A;&#x88AB;&#x6E05;0&#xFF0C;&#x4F7F;&#x5F97;&#x4E0E;&#x4E8C;&#x503C;&#x4FE1;&#x53F7;&#x91CF;
+    &#x6709;&#x76F8;&#x540C;&#x7684;&#x7279;&#x6027;&#x3002;*/
+    ulNotificationValue = ulTaskNotifyTake( pdTRUE,
+                                            xMaxBlockTime );
+
+    if( ulNotificationValue == 1 )
+    {
+        /* &#x4F20;&#x8F93;&#x5B8C;&#x6210;. */
+    }
+    else
+    {
+        /* &#x7B49;&#x5F85;&#x901A;&#x77E5;&#x8D85;&#x65F6;. */
+    }
+}</code></pre>
+<h2 id="&#x66FF;&#x4EE3;&#x8BA1;&#x6570;&#x4FE1;&#x53F7;&#x91CF;counting-semaphore">&#x66FF;&#x4EE3;&#x8BA1;&#x6570;&#x4FE1;&#x53F7;&#x91CF;(counting semaphore)</h2><p>&#x8BA1;&#x6570;&#x4FE1;&#x53F7;&#x91CF;&#x5F53;&#x67D0;&#x4E2A;&#x4FE1;&#x53F7;&#x89E6;&#x53D1;&#x7684;&#x65F6;&#x5019;&#x5176;&#x503C;&#x53EF;&#x4EE5;&#x4ECE;0&#x5F00;&#x59CB;&#x7D2F;&#x52A0;&#x5230;&#x4E00;&#x4E2A;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x5F53;&#x4E8C;&#x503C;&#x4FE1;&#x53F7;&#x91CF;&#x7684;&#x503C;&#x5927;&#x4E8E;0&#x65F6;&#xFF0C;&#x5BF9;&#x4E8E;&#x60F3;&#x8981;&#x83B7;&#x53D6;&#x5B83;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x5B83;&#x662F;&#x6709;&#x6548;&#x7684;&#x3002;</p><p>&#x4E0E;&#x66FF;&#x4EE3;&#x4E8C;&#x503C;&#x4FE1;&#x53F7;&#x91CF;&#x7C7B;&#x4F3C;&#xFF0C;&#x5F53;&#x4F7F;&#x7528;&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x6765;&#x4EE3;&#x66FF;&#x8BA1;&#x6570;&#x4FE1;&#x53F7;&#x91CF;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x63A5;&#x6536;&#x4EFB;&#x52A1;&#x7684;&#x901A;&#x77E5;&#x503C;&#x88AB;&#x7528;&#x6765;&#x4EE3;&#x66FF;&#x8BA1;&#x6570;&#x4FE1;&#x53F7;&#x91CF;&#x7684;&#x8BA1;&#x6570;&#x503C;&#xFF0C;&#x6B64;&#x65F6;<code>ulTaskNotifyTake()</code>API&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x66FF;&#x4EE3;<code>xSemaphoreTake()</code>&#x3002;<code>ulTaskNotifyTake()</code>&#x7684;<code>xClearOnExit</code>&#x53C2;&#x6570;&#x88AB;&#x8BBE;&#x7F6E;&#x6210;<code>pdFALSE</code>&#xFF0C;&#x5728;&#x6BCF;&#x6B21;&#x901A;&#x77E5;&#x88AB;&#x83B7;&#x53D6;&#x540E;&#x3002;&#x8BA1;&#x6570;&#x503C;&#x4F1A;&#x9012;&#x51CF;&#x800C;&#x4E0D;&#x662F;&#x6E05;0&#xFF0C;&#x4EE5;&#x6B64;&#x6765;&#x6A21;&#x62DF;&#x8BA1;&#x6570;&#x4FE1;&#x53F7;&#x91CF;&#x3002;</p><p>&#x540C;&#x7406;&#xFF0C;<code>xTaskNotifyGive()</code>&#x548C;<code>vTaskNotifyGiveFromISR()</code>&#x7528;&#x6765;&#x4EE3;&#x66FF;<code>xSemaphoreGive()</code>&#x548C;<code>xSemaphoreGiveFromISR()</code>&#x3002;</p><p>&#x4E0B;&#x9762;&#x8981;&#x770B;&#x4E24;&#x4E2A;&#x6817;&#x5B50;...</p><p><strong>&#x6817;&#x5B50;1&#xFF1A;</strong></p><pre><code>/*&#x4E2D;&#x65AD;&#x4E0D;&#x76F4;&#x63A5;&#x5904;&#x7406;&#xFF0C;&#x800C;&#x662F;&#x63A8;&#x8FDF;&#x5230;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x4EFB;&#x52A1;&#x4E2D;&#x5904;&#x7406;&#xFF0C;&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x6B64;&#x5904;&#x8D1F;&#x8D23;
+&#x4F7F;&#x4EFB;&#x52A1;&#x4ECE;&#x963B;&#x585E;&#x6001;&#x4E2D;&#x6062;&#x590D;&#x548C;&#x589E;&#x52A0;&#x4EFB;&#x52A1;&#x503C;&#x3002; */
+void vANInterruptHandler( void )
+{
+BaseType_t xHigherPriorityTaskWoken;
+
+    /* &#x6E05;&#x4E2D;&#x65AD; */
+    prvClearInterruptSource();
+
+    /* xHigherPriorityTaskWoken &#x5FC5;&#x987B;&#x521D;&#x59CB;&#x5316;&#x4E3A; pdFALSE&#x3002;
+    &#x5982;&#x679C;&#x5728;&#x8C03;&#x7528; vTaskNotifyGiveFromISR()&#x6062;&#x590D;&#x963B;&#x585E;&#x7684;&#x5904;&#x7406;&#x4EFB;&#x52A1;&#x540E;&#xFF0C;
+    &#x5E76;&#x4E14;&#x8FD9;&#x4E2A;&#x5904;&#x7406;&#x4EFB;&#x52A1;&#x6BD4;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#xFF0C;xHigherPriorityTaskWoken
+    &#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;&#x4E3A;pdTRUE&#x3002;*/
+    xHigherPriorityTaskWoken = pdFALSE;
+
+    /* &#x963B;&#x585E;&#x7684;&#x5904;&#x7406;&#x4EFB;&#x52A1;&#x5728;&#x6062;&#x590D;&#x540E;&#x4F1A;&#x505A;&#x4E00;&#x4E9B;&#x5FC5;&#x8981;&#x7684;&#x4E2D;&#x65AD;&#x5904;&#x7406;&#xFF0C; xHandlingTask&#x5728;
+    &#x4EFB;&#x52A1;&#x521B;&#x5EFA;&#x7684;&#x65F6;&#x5019;&#x786E;&#x5B9A;&#xFF0C;vTaskNotifyGiveFromISR&#x4F1A;&#x589E;&#x52A0;&#x5904;&#x7406;&#x4EFB;&#x52A1;&#x7684;&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x503C;*/
+    vTaskNotifyGiveFromISR( xHandlingTask, &amp;xHigherPriorityTaskWoken );
+
+    /* &#x5982;&#x679C;&#x4E00;&#x4E2A;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x4EFB;&#x52A1;&#x5C31;&#x7EEA;&#xFF0C;&#x5219;&#x5F3A;&#x5236;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362; */
+    portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+}
+/*-----------------------------------------------------------*/
+
+/* &#x4EFB;&#x52A1;&#x963B;&#x585E;&#x7B49;&#x5F85;&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x5230;&#x6765;*/
+void vHandlingTask( void *pvParameters )
+{
+BaseType_t xEvent;
+const TickType_t xBlockTime = pdMS_TO_TICS( 500 );
+uint32_t ulNotifiedValue;
+
+    for( ;; )
+    {
+        /* &#x963B;&#x585E;&#x7B49;&#x5F85;&#x901A;&#x77E5;&#x5230;&#x6765;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x6210;pdFALSE&#xFF0C;&#x8FD9;&#x6837;&#x5728;&#x83B7;&#x5F97;&#x901A;&#x77E5;
+        &#x4E4B;&#x540E;&#xFF0C;&#x901A;&#x77E5;&#x503C;&#x4F1A;&#x51CF;&#x5C11;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6E05;0*/
+        ulNotifiedValue = ulTaskNotifyTake( pdFALSE,
+                                            xBlockTime );
+
+        if( ulNotifiedValue &gt; 0 )
+        {
+            /* &#x8FDB;&#x884C;&#x4E2D;&#x65AD;&#x4E2D;&#x672A;&#x4F5C;&#x7684;&#x4E00;&#x4E9B;&#x5FC5;&#x8981;&#x5904;&#x7406; */
+            xEvent = xQueryPeripheral();
+
+            if( xEvent != NO_MORE_EVENTS )
+            {
+                vProcessPeripheralEvent( xEvent );
+            }
+        }
+        else
+        {
+            /* &#x7B49;&#x5F85;&#x901A;&#x77E5;&#x8D85;&#x65F6; */
+            vCheckForErrorConditions();
+        }
+    }
+}</code></pre>
+<p><strong>&#x6817;&#x5B50;2&#xFF1A;</strong></p><p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x5C55;&#x793A;&#x4E86;&#x4E00;&#x4E2A;&#x66F4;&#x5B9E;&#x7528;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x8FD9;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x5E94;&#x7528;&#x53EF;&#x4EE5;&#x5E94;&#x7528;&#x5728;&#x5982;&#x4E32;&#x53E3;&#x63A5;&#x6536;&#x4E2D;&#xFF0C;
+&#x901A;&#x77E5;&#x503C;&#x5C31;&#x662F;&#x63A5;&#x6536;&#x5230;&#x7684;&#x6570;&#x636E;&#x4E2A;&#x6570;&#xFF0C;&#x4EFB;&#x52A1;&#x5728;&#x88AB;&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x5524;&#x9192;&#x540E;&#xFF0C;&#x5C06;&#x901A;&#x77E5;&#x503C;&#x4EE3;&#x8868;&#x7684;&#x6240;
+&#x6709;&#x4E8B;&#x4EF6;&#x4E00;&#x6B21;&#x6027;&#x5904;&#x7406;&#x5B8C;&#x6210;&#x3002;&#x4E2D;&#x65AD;&#x90E8;&#x5206;&#x548C;&#x4F8B;&#x5B50;1&#x76F8;&#x540C;&#xFF0C;&#x4E0B;&#x9762;&#x4E0D;&#x91CD;&#x590D;&#x4E86;&#x3002;</p><pre><code>
+void vHandlingTask( void *pvParameters )
+{
+BaseType_t xEvent;
+const TickType_t xBlockTime = pdMS_TO_TICS( 500 );
+uint32_t ulNotifiedValue;
+
+    for( ;; )
+    {
+        /* &#x4E0E;&#x4F8B;&#x5B50;1&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x91CC;&#x5C06;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x6210;pdTRUE&#xFF0C;&#x56E0;&#x6B64;&#x901A;&#x77E5;&#x503C;&#x5728;
+        &#x83B7;&#x53D6;&#x4E4B;&#x540E;&#x4F1A;&#x88AB;&#x6E05;0 */
+        ulNotifiedValue = ulTaskNotifyTake( pdTRUE,
+                                            xBlockTime );
+
+        if( ulNotifiedValue == 0 )
+        {
+            /* &#x7B49;&#x5F85;&#x4EFB;&#x52A1;&#x8D85;&#x65F6;*/
+            vCheckForErrorConditions();
+        }
+        else
+        {
+            /* &#x91CD;&#x590D;&#x5904;&#x7406;&#x6240;&#x6709;&#x7684;&#x4E2D;&#x65AD;&#x4E8B;&#x4EF6; */
+            while( ulNotifiedValue &gt; 0 )
+            {
+                xEvent = xQueryPeripheral();
+
+                if( xEvent != NO_MORE_EVENTS )
+                {
+                    vProcessPeripheralEvent( xEvent );
+                    ulNotifiedValue--;
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+    }
+}</code></pre>
+<h2 id="&#x66FF;&#x4EE3;&#x4E8B;&#x4EF6;&#x7EC4;event-group">&#x66FF;&#x4EE3;&#x4E8B;&#x4EF6;&#x7EC4;(<code>event group</code>)</h2><p>&#x4E8B;&#x4EF6;&#x7EC4;&#x662F;&#x4E00;&#x4E2A;&#x4E8C;&#x8FDB;&#x5236;&#x6807;&#x5FD7;&#x96C6;&#x5408;&#xFF0C;&#x6BCF;&#x4E2A;&#x4F4D;&#x7528;&#x6237;&#x90FD;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4EE3;&#x8868;&#x67D0;&#x4E2A;&#x542B;&#x4E49;&#x3002;RTOS&#x4EFB;&#x52A1;&#x5728;&#x7B49;&#x5F85;&#x4E00;&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#x6807;&#x5FD7;&#x6709;&#x6548;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x8FDB;&#x5165;&#x963B;&#x585E;&#x6001;&#xFF0C;&#x6B64;&#x65F6;&#x4E0D;&#x5360;&#x7528;CPU&#x65F6;&#x95F4;&#x3002;</p><p>&#x5F53;&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x7528;&#x6765;&#x4EE3;&#x66FF;&#x65F6;&#x95F4;&#x7EC4;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4EFB;&#x52A1;&#x503C;&#x88AB;&#x7528;&#x6765;&#x4EE3;&#x66FF;&#x4E8B;&#x4EF6;&#x7EC4;&#x7684;&#x503C;&#xFF0C;&#x901A;&#x77E5;&#x503C;&#x7684;&#x6BCF;&#x4E00;&#x4F4D;&#x88AB;&#x7528;&#x6765;&#x4EE3;&#x8868;&#x67D0;&#x4E2A;&#x6807;&#x5FD7;&#x3002;<code>xTaskNotifyWait()</code>&#x88AB;&#x7528;&#x6765;&#x4EE3;&#x66FF;<code>xEventGroupWaitBits()</code>&#x3002;</p><p>&#x540C;&#x7406; <code>xTaskNotify()</code> &#x548C; <code>xTaskNotifyFromISR()</code>(<code>eAction</code>&#x88AB;&#x66FF;&#x6362;&#x6210;<code>eSetBits</code>)&#x7528;&#x6765;&#x4EE3;&#x66FF;<code>xEventGroupSetBits()</code> &#x548C; <code>xEventGroupSetBitsFromISR()</code>&#x3002;</p><p><code>xTaskNotifyFromISR()</code>&#x76F8;&#x6BD4;<code>xEventGroupSetBitsFromISR()</code>&#x6709;&#x7740;&#x663E;&#x8457;&#x7684;&#x6027;&#x80FD;&#x4F18;&#x52BF;&#xFF0C;&#x56E0;&#x4E3A;&#x524D;&#x8005;&#x7684;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x90FD;&#x5728;&#x4E2D;&#x65AD;&#x4E2D;&#x5B8C;&#x6210;&#xFF0C;&#x800C;&#x540E;&#x8005;&#x7684;&#x90E8;&#x5206;&#x64CD;&#x4F5C;&#x9700;&#x8981;&#x5728;&#x5185;&#x6838;&#x7684;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;(<code>daemon task</code>)&#x4E2D;&#x5B8C;&#x6210;&#x3002;</p><p>&#x4E0E;&#x5B9E;&#x7528;&#x65F6;&#x95F4;&#x7EC4;&#x4E0D;&#x540C;&#x7684;&#x662F;&#x4EFB;&#x52A1;&#x65E0;&#x6CD5;&#x6307;&#x5B9A;&#x67D0;&#x4E2A;&#x6807;&#x5FD7;&#x5C06;&#x5176;&#x4ECE;&#x963B;&#x585E;&#x6001;&#x6062;&#x590D;&#xFF0C;&#x4EFB;&#x4F55;bit&#x53D8;&#x6210;&#x6709;&#x6548;&#x90FD;&#x4F1A;&#x5C06;&#x4EFB;&#x52A1;&#x4ECE;&#x963B;&#x585E;&#x6001;&#x6062;&#x590D;&#xFF0C;&#x56E0;&#x6B64;&#x4EFB;&#x52A1;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x53BB;&#x786E;&#x5B9A;&#x662F;&#x54EA;&#x4E00;&#x4E2A;&#x6807;&#x5FD7;&#x5C06;&#x5176;&#x6062;&#x590D;&#x3002;</p><p>&#x8001;&#x89C4;&#x77E9;&#xFF0C;&#x770B;&#x6817;&#x5B50;&#xFF1A;</p><pre><code>/* &#x8FD9;&#x4E2A;&#x6817;&#x5B50;&#x6F14;&#x793A;&#x4E86;&#x5B9E;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x5904;&#x7406;&#x4E24;&#x4E2A;&#x4E2D;&#x65AD;&#xFF0C;&#x4E00;&#x4E2A;&#x63A5;&#x6536;&#x4E2D;&#x65AD;&#x4E00;&#x4E2A;&#x53D1;&#x9001;&#x4E2D;&#x65AD;&#xFF0C;
+&#x5F88;&#x591A;&#x5916;&#x8BBE;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x7740;&#x4E24;&#x4E2A;&#x4E2D;&#x65AD;&#xFF0C;&#x5916;&#x8BBE;&#x7684;&#x4E2D;&#x65AD;&#x5BC4;&#x5B58;&#x5668;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x7684;&#x4E0E;&#x63A5;&#x6536;&#x4EFB;&#x52A1;&#x7684;&#x901A;&#x77E5;
+&#x6309;&#x4F4D;&#x8FDB;&#x884C;&#x6216;&#x8FD0;&#x7B97;
+
+&#x6BCF;&#x4E00;&#x4F4D;&#x4EE3;&#x8868;&#x7684;&#x4E2D;&#x65AD;&#x6E90;&#x5B9A;&#x4E49; */
+#define TX_BIT    0x01
+#define RX_BIT    0x02
+
+/* &#x8FD9;&#x4E2A;&#x53E5;&#x67C4;&#x7684;&#x4EFB;&#x52A1;&#x4F1A;&#x7528;&#x6765;&#x63A5;&#x6536;&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#xFF0C;&#x53E5;&#x67C4;&#x5728;&#x4EFB;&#x52A1;&#x521B;&#x5EFA;&#x65F6;&#x786E;&#x7ACB; */
+static TaskHandle_t xHandlingTask;
+
+/*-----------------------------------------------------------*/
+
+/* &#x53D1;&#x9001;&#x4E2D;&#x65AD; */
+void vTxISR( void )
+{
+BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+   /* &#x6E05;&#x4E2D;&#x65AD; */
+   prvClearInterrupt();
+
+   /* &#x901A;&#x8FC7;&#x8BBE;&#x7F6E;TX_BIT&#xFF0C;&#x901A;&#x77E5;&#x4EFB;&#x52A1;&#x53D1;&#x9001;&#x5B8C;&#x6210; */
+   xTaskNotifyFromISR( xHandlingTask,
+                       TX_BIT,
+                       eSetBits,
+                       &amp;xHigherPriorityTaskWoken );
+
+   /* &#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x4EFB;&#x52A1;&#x5C31;&#x7EEA;&#xFF0C;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362; */
+   portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+}
+/*-----------------------------------------------------------*/
+
+/* &#x63A5;&#x6536;&#x4E2D;&#x65AD; */
+void vRxISR( void )
+{
+BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+   /* &#x6E05;&#x4E2D;&#x65AD;. */
+   prvClearInterrupt();
+
+   /* &#x7F6E;&#x4F4D;RX_BIT&#xFF0C;&#x901A;&#x77E5;&#x63A5;&#x6536;&#x4EFB;&#x52A1;&#x63A5;&#x6536;&#x4E2D;&#x65AD;&#x53D1;&#x9001; */
+   xTaskNotifyFromISR( xHandlingTask,
+                       RX_BIT,
+                       eSetBits,
+                       &amp;xHigherPriorityTaskWoken );
+
+   /* &#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x4EFB;&#x52A1;&#x5C31;&#x7EEA;&#xFF0C;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362; */
+   portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+}
+/*-----------------------------------------------------------*/
+
+/* &#x4EFB;&#x52A1;&#x5B9E;&#x73B0; */
+static void prvHandlingTask( void *pvParameter )
+{
+const TickType_t xMaxBlockTime = pdMS_TO_TICKS( 500 );
+BaseType_t xResult;
+
+   for( ;; )
+   {
+      /* &#x7B49;&#x5F85;&#x4E2D;&#x65AD;&#x901A;&#x77E5;. */
+      xResult = xTaskNotifyWait( pdFALSE,    /* &#x8F93;&#x5165;&#x4E0D;&#x6E05;&#x9664;&#x4F4D;. */
+                           ULONG_MAX,        /* &#x9000;&#x51FA;&#x65F6;&#x6E05;&#x9664;&#x4F4D; */
+                           &amp;ulNotifiedValue, /* &#x901A;&#x77E5;&#x503C;. */
+                           xMaxBlockTime );
+
+      if( xResult == pdPASS )
+      {
+         /* &#x6536;&#x5230;&#x901A;&#x77E5;&#xFF0C;&#x68C0;&#x67E5;&#x7F6E;&#x4F4D;&#x60C5;&#x51B5;. */
+         if( ( ulNotifiedValue &amp; TX_BIT ) != 0 )
+         {
+            /* &#x53D1;&#x9001;&#x4E2D;&#x65AD;&#x7F6E;&#x4F4D;. */
+            prvProcessTx();
+         }
+
+         if( ( ulNotifiedValue &amp; RX_BIT ) != 0 )
+         {
+            /* &#x63A5;&#x6536;&#x4E2D;&#x65AD;&#x7F6E;&#x4F4D; */
+            prvProcessRx();
+         }
+      }
+      else
+      {
+         /* &#x7B49;&#x5F85;&#x8D85;&#x65F6;. */
+         prvCheckForErrors();
+      }
+   }
+}</code></pre>
+<h2 id="&#x66FF;&#x4EE3;&#x90AE;&#x7BB1;mailbox">&#x66FF;&#x4EE3;&#x90AE;&#x7BB1;(mailbox)</h2><p>RTOS&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x53EA;&#x80FD;&#x7528;&#x6765;&#x53D1;&#x9001;&#x6570;&#x636E;&#x5230;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x4E2D;&#xFF0C;&#x76F8;&#x6BD4;&#x7528;&#x961F;&#x5217;&#x5B9E;&#x73B0;&#xFF0C;&#x6709;&#x4E00;&#x4E9B;&#x9650;&#x5236;&#xFF1A;</p><ul><li>&#x53EA;&#x80FD;&#x53D1;&#x9001;32-bit&#x6570;&#x636E;
+</li>
+<li>&#x4FDD;&#x5B58;&#x7684;&#x662F;&#x63A5;&#x6536;&#x4EFB;&#x52A1;&#x7684;&#x503C;&#xFF0C;&#x56E0;&#x6B64;&#x540C;&#x4E00;&#x4E2A;&#x65F6;&#x523B;&#x53EA;&#x80FD;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x63A5;&#x6536;&#x4EFB;&#x52A1;
+</li></ul>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x4F7F;&#x7528;&quot;&#x8F7B;&#x91CF;&#x90AE;&#x7BB1;&quot;&#x8FD9;&#x4E2A;&#x77ED;&#x8BED;&#x4EE3;&#x66FF;&quot;&#x8F7B;&#x91CF;&#x961F;&#x5217;&quot;&#x3002;&#x4EFB;&#x52A1;&#x7684;&#x901A;&#x77E5;&#x503C;&#x5C31;&#x662F;&#x90AE;&#x7BB1;&#x503C;&#x3002;</p><p>&#x6570;&#x636E;&#x901A;&#x8FC7;&#x4F7F;&#x7528;<code>xTaskNotify()</code>&#x548C;<code>xTaskNotifyFromISR()</code>&#x53D1;&#x9001;&#x81F3;&#x4EFB;&#x52A1;&#x3002;&#x5176;&#x4E2D;&#xFF0C;<code>eAction</code>&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x6210;<code>eSetValueWithOverwrite</code>&#x6216;&#x8005;<code>eSetValueWithoutOverwrite</code>&#xFF0C;&#x524D;&#x8005;&#x4F1A;&#x76F4;&#x63A5;&#x66F4;&#x65B0;&#x901A;&#x77E5;&#x503C;&#x53CA;&#x65F6;&#x4EFB;&#x52A1;&#x5DF2;&#x7ECF;&#x6709;&#x4E00;&#x4E2A;&#x901A;&#x77E5;&#x6302;&#x8D77;&#xFF0C;&#x540E;&#x8005;&#x4F1A;&#x5728;&#x4EFB;&#x52A1;&#x6CA1;&#x6709;&#x901A;&#x77E5;&#x6302;&#x8D77;&#x624D;&#x4F1A;&#x66F4;&#x65B0;&#x4EFB;&#x52A1;&#x503C;-&#x5728;&#x63A5;&#x6536;&#x4EFB;&#x52A1;&#x5904;&#x7406;&#x4E4B;&#x524D;&#x66F4;&#x65B0;&#x901A;&#x77E5;&#x503C;&#x4F1A;&#x8986;&#x5199;&#x5148;&#x524D;&#x7684;&#x503C;&#x3002;</p><p>&#x4EFB;&#x52A1;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8C03;&#x7528;<code>xTaskNotifyWait()</code>&#x6765;&#x83B7;&#x53D6;&#x81EA;&#x5DF1;&#x7684;&#x901A;&#x77E5;&#x503C;&#x3002;</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="递归互斥量.html" class="navigation navigation-prev " aria-label="Previous page: 递归互斥量">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../事件组/事件组.html" class="navigation navigation-next " aria-label="Next page: 事件组">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"任务通知","level":"1.3.2.6","depth":3,"next":{"title":"事件组","level":"1.3.3","depth":2,"path":"入门/事件组/事件组.md","ref":"入门/事件组/事件组.md","articles":[]},"previous":{"title":"递归互斥量","level":"1.3.2.5","depth":3,"path":"入门/通信机制/递归互斥量.md","ref":"入门/通信机制/递归互斥量.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-comscore"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"sitemap-general":{"prefix":"https://cyberzhg.gitbooks.io/clrs_solution/content/"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"mobi":{"fontSize":12,"footerTemplate":null,"headerTemplate":null,"margin":{"bottom":36,"left":62,"right":62,"top":36},"pageNumbers":false,"paperSize":"a4"},"theme":"default","author":"tangguocheng","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"freeRTOS中文文档","language":"Chinese","links":{"sidebar":{"博客":"http://www.xn--4gqa63c686ta68iba.ren/"}},"gitbook":"*","description":"freeRTOS中文文档","extension":null},"file":{"path":"入门/通信机制/任务通知.md","mtime":"2016-08-29T00:47:32.772Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-29T03:28:53.428Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
