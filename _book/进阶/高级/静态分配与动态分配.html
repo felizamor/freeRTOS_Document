@@ -1,0 +1,731 @@
+
+<!DOCTYPE HTML>
+<html lang="Chinese" >
+    <head>
+        <title>静态和动态内存分配 · freeRTOS中文文档</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="author" content="tangguocheng">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prismx/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="内存管理.html" />
+    
+    
+    <link rel="prev" href="中断延迟.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.xn--4gqa63c686ta68iba.ren/" target="_blank" class="custom-link">博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    关于
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../简介/freeRTOS介绍.html">
+            
+                <a href="../../简介/freeRTOS介绍.html">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../简介/编码规则和风格.html">
+            
+                <a href="../../简介/编码规则和风格.html">
+            
+                    
+                    编码规则和风格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../简介/许可.html">
+            
+                <a href="../../简介/许可.html">
+            
+                    
+                    许可
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../简介/快速开始指南.html">
+            
+                <a href="../../简介/快速开始指南.html">
+            
+                    
+                    快速开始指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../入门/readme.html">
+            
+                <a href="../../入门/readme.html">
+            
+                    
+                    入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../入门/任务和协程/readme.html">
+            
+                <a href="../../入门/任务和协程/readme.html">
+            
+                    
+                    任务和协程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../入门/任务和协程/任务.html">
+            
+                <a href="../../入门/任务和协程/任务.html">
+            
+                    
+                    任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../入门/任务和协程/协程.html">
+            
+                <a href="../../入门/任务和协程/协程.html">
+            
+                    
+                    协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../入门/通信机制/readme.html">
+            
+                <a href="../../入门/通信机制/readme.html">
+            
+                    
+                    通信机制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../入门/通信机制/队列.html">
+            
+                <a href="../../入门/通信机制/队列.html">
+            
+                    
+                    队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../入门/通信机制/二值信号量.html">
+            
+                <a href="../../入门/通信机制/二值信号量.html">
+            
+                    
+                    二值信号量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../入门/通信机制/计数信号量.html">
+            
+                <a href="../../入门/通信机制/计数信号量.html">
+            
+                    
+                    计数信号量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../../入门/通信机制/互斥量.html">
+            
+                <a href="../../入门/通信机制/互斥量.html">
+            
+                    
+                    互斥量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../../入门/通信机制/递归互斥量.html">
+            
+                <a href="../../入门/通信机制/递归互斥量.html">
+            
+                    
+                    递归互斥量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../../入门/通信机制/任务通知.html">
+            
+                <a href="../../入门/通信机制/任务通知.html">
+            
+                    
+                    任务通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../入门/事件组/事件组.html">
+            
+                <a href="../../入门/事件组/事件组.html">
+            
+                    
+                    事件组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../入门/软件定时器/软件定时器.html">
+            
+                <a href="../../入门/软件定时器/软件定时器.html">
+            
+                    
+                    软件定时器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../readme.md">
+            
+                <span>
+            
+                    
+                    进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../源代码组织结构/源代码组织结构.html">
+            
+                <a href="../源代码组织结构/源代码组织结构.html">
+            
+                    
+                    源代码组织结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="配置文件.html">
+            
+                <a href="配置文件.html">
+            
+                    
+                    配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="跟踪特性.html">
+            
+                <a href="跟踪特性.html">
+            
+                    
+                    跟踪特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="低功耗支持.html">
+            
+                <a href="低功耗支持.html">
+            
+                    
+                    低功耗支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="运行时间统计.html">
+            
+                <a href="运行时间统计.html">
+            
+                    
+                    运行时间统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="队列集合.html">
+            
+                <a href="队列集合.html">
+            
+                    
+                    队列集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="中断延迟.html">
+            
+                <a href="中断延迟.html">
+            
+                    
+                    中断延迟
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.8" data-path="静态分配与动态分配.html">
+            
+                <a href="静态分配与动态分配.html">
+            
+                    
+                    静态和动态内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="内存管理.html">
+            
+                <a href="内存管理.html">
+            
+                    
+                    内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="栈溢出检测.html">
+            
+                <a href="栈溢出检测.html">
+            
+                    
+                    栈溢出检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="钩子函数.html">
+            
+                <a href="钩子函数.html">
+            
+                    
+                    钩子函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="线程本地存储.html">
+            
+                <a href="线程本地存储.html">
+            
+                    
+                    线程本地存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="移植指南.html">
+            
+                <a href="移植指南.html">
+            
+                    
+                    移植指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path=".">
+            
+                <span>
+            
+                    
+                    在windows上模拟
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >静态和动态内存分配</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x5728;<code>V9.0.0</code>&#x7248;&#x672C;&#x4E4B;&#x524D;&#x4E3A;&#x4E0B;&#x5217;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x5185;&#x5B58;&#x91C7;&#x7528;&#x52A8;&#x6001;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5728;&#x4E4B;&#x540E;&#x7684;&#x7248;&#x672C;&#x624D;&#x5141;&#x8BB8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5F00;&#x53D1;&#x8005;&#x81EA;&#x5DF1;&#x9759;&#x6001;&#x7684;&#x5206;&#x914D;&#x5185;&#x5B58;&#xFF1B;</p><ul><li>&#x4EFB;&#x52A1;
+</li>
+<li>&#x8F6F;&#x4EF6;&#x5B9A;&#x65F6;&#x5668;
+</li>
+<li>&#x961F;&#x5217;
+</li>
+<li>&#x4E8B;&#x4EF6;&#x7EC4;
+</li>
+<li>&#x4E8C;&#x503C;&#x4FE1;&#x53F7;&#x91CF;
+</li>
+<li>&#x8BA1;&#x6570;&#x4FE1;&#x53F7;&#x91CF;
+</li>
+<li>&#x9012;&#x5F52;&#x4FE1;&#x53F7;&#x91CF;
+</li>
+<li>&#x4E92;&#x65A5;&#x91CF;
+</li></ul>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x9759;&#x6001;&#x5206;&#x914D;&#x8FD8;&#x662F;&#x52A8;&#x6001;&#x5206;&#x914D;&#x7531;&#x5F00;&#x53D1;&#x8005;&#x81EA;&#x5DF1;&#x51B3;&#x5B9A;&#x3002;</p><h2 id="&#x52A8;&#x6001;&#x5206;&#x914D;">&#x52A8;&#x6001;&#x5206;&#x914D;</h2><p>&#x52A8;&#x6001;&#x5206;&#x914D;&#x7684;&#x597D;&#x5904;&#x5728;&#x4E8E;&#x4F7F;&#x7528;&#x7075;&#x6D3B;&#x7B80;&#x5355;&#x3001;&#x540C;&#x65F6;&#x6F5C;&#x5728;&#x7684;&#x53EF;&#x4EE5;&#x964D;&#x4F4E;&#x5185;&#x5B58;&#x5360;&#x7528;&#x3002;</p><ul><li>&#x66F4;&#x5C11;&#x7684;&#x51FD;&#x6570;&#x53C2;&#x6570;
+</li>
+<li>&#x5185;&#x5B58;&#x5206;&#x914D;&#x4F7F;&#x7528;RTOS&#x63D0;&#x4F9B;&#x7684;API&#x81EA;&#x52A8;&#x5206;&#x914D;
+</li>
+<li>&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5F00;&#x53D1;&#x8005;&#x4E0D;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x53BB;&#x8003;&#x8651;&#x5185;&#x5B58;&#x5206;&#x914D;&#xFF0C;&#x53EA;&#x8981;&#x5185;&#x5B58;&#x8DB3;&#x591F;
+</li>
+<li>&#x5982;&#x679C;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x88AB;&#x5220;&#x9664;&#xFF0C;&#x5219;&#x5B83;&#x5360;&#x7528;&#x7684;&#x90A3;&#x90E8;&#x5206;&#x7A7A;&#x95F4;&#x53EF;&#x4EE5;&#x56DE;&#x6536;&#x518D;&#x5229;&#x7528;
+</li>
+<li>RTOS&#x7684;API&#x51FD;&#x6570;&#x63D0;&#x4F9B;&#x5806;&#x5185;&#x5B58;&#x7684;&#x4F7F;&#x7528;&#x4FE1;&#x606F;&#x8FD4;&#x56DE;&#xFF0C;&#x65B9;&#x4FBF;&#x4F18;&#x5316;&#x5806;&#x5185;&#x5B58;&#x5927;&#x5C0F;
+</li>
+<li>&#x5185;&#x5B58;&#x5206;&#x914D;&#x673A;&#x5236;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x6700;&#x9002;&#x5408;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#xFF0C;&#x4F8B;&#x5982;<code>heap_1.c</code>&#x9002;&#x7528;&#x4E8E;&#x7B80;&#x5355;&#x7684;&#x548C;&#x5BF9;&#x5185;&#x5B58;&#x5B89;&#x5168;&#x6709;&#x9650;&#x5236;&#x7684;&#x5E94;&#x7528;&#xFF0C;<code>heap_4.c</code>&#x7528;&#x4E8E;&#x788E;&#x7247;&#x4FDD;&#x62A4;&#xFF0C;<code>heap_5.c</code>&#x5206;&#x6563;&#x5806;&#x5230;&#x591A;&#x4E2A;RAM&#x533A;&#x57DF;&#x3002;
+</li></ul>
+<p>&#x4E0B;&#x5217;API&#x7528;&#x4E8E;&#x52A8;&#x6001;&#x5185;&#x5B58;&#x5206;&#x914D;&#xFF0C;<code>configSUPPORT_DYNAMIC_ALLOCATION</code>&#x8BBE;&#x7F6E;&#x9879;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x4E3A;1&#xFF0C;&#x6216;&#x8005;&#x4E0D;&#x5B9A;&#x4E49;&#x3002;</p><ul><li>xTaskCreate()
+</li>
+<li>xQueueCreate()
+</li>
+<li>xTimerCreate()
+</li>
+<li>xEventGroupCreate()
+</li>
+<li>xSemaphoreCreateBinary()
+</li>
+<li>xSemaphoreCreateCounting()
+</li>
+<li>xSemaphoreCreateMutex()
+</li>
+<li>xSemaphoreCreateRecursiveMutex()
+</li></ul>
+<p><em>&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x53C2;&#x8003;&#x5B98;&#x65B9;API&#x53C2;&#x8003;&#x624B;&#x518C;</em></p><h2 id="&#x9759;&#x6001;&#x5206;&#x914D;">&#x9759;&#x6001;&#x5206;&#x914D;</h2><p>&#x9759;&#x6001;&#x5185;&#x5B58;&#x5206;&#x914D;&#x7684;&#x597D;&#x5904;&#xFF1A;</p><ul><li>RTOS &#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x653E;&#x7F6E;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x7279;&#x5B9A;&#x4F4D;&#x7F6E;
+</li>
+<li>&#x6700;&#x5927;&#x7684;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x5728;&#x7F16;&#x8BD1;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x786E;&#x5B9A;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x5019;
+</li>
+<li>&#x5F00;&#x53D1;&#x8005;&#x4E0D;&#x9700;&#x8981;&#x8003;&#x8651;&#x5185;&#x5B58;&#x5206;&#x914D;&#x5931;&#x8D25;&#x7684;&#x60C5;&#x51B5;
+</li>
+<li>&#x5141;&#x8BB8;&#x4E0D;&#x53BB;&#x52A8;&#x6001;&#x5206;&#x914D;&#x5185;&#x8BAD;&#xFF0C;&#x8FD9;&#x6837;&#x5728;&#x4F7F;&#x7528;RTOS&#x4E0A;&#x4F1A;&#x7B80;&#x5355;&#x70B9;&#xFF08;&#x5C3D;&#x7BA1;freeRTOS&#x7684;&#x5185;&#x5B58;&#x5206;&#x914D;&#x673A;&#x5236;&#x4EE5;&#x53CA;&#x53EF;&#x4EE5;&#x514B;&#x670D;&#x5927;&#x591A;&#x6570;&#x4E0D;&#x5229;&#x6761;&#x4EF6;&#xFF09;
+</li></ul>
+<p>&#x5728;<code>configSUPPORT_STATIC_ALLOCATION</code>&#x8BBE;&#x7F6E;&#x4E3A;1&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x5217;API&#x51FD;&#x6570;&#x5B9E;&#x73B0;&#x9759;&#x6001;&#x5185;&#x5B58;&#x5206;&#x914D;&#xFF0C;&#x5206;&#x914D;&#x597D;&#x7684;&#x9759;&#x6001;&#x5185;&#x5B58;&#x5730;&#x5740;&#x4F20;&#x9012;&#x7ED9;API&#x51FD;&#x6570;&#x3002;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="https://sourceforge.net/p/freertos/code/HEAD/tree/trunk/FreeRTOS/Demo/Common/Minimal/StaticAllocation.c" target="_blank">StaticAllocation.c</a></p><ul><li>xTaskCreateStatic()
+</li>
+<li>xQueueCreateStatic()
+</li>
+<li>xTimerCreateStatic()
+</li>
+<li>xEventGroupCreateStatic()
+</li>
+<li>xSemaphoreCreateBinaryStatic()
+</li>
+<li>xSemaphoreCreateCountingStatic()
+</li>
+<li>xSemaphoreCreateMutexStatic()
+</li>
+<li>xSemaphoreCreateRecursiveMutexStatic()
+</li></ul>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="中断延迟.html" class="navigation navigation-prev " aria-label="Previous page: 中断延迟">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="内存管理.html" class="navigation navigation-next " aria-label="Next page: 内存管理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"静态和动态内存分配","level":"1.4.8","depth":2,"next":{"title":"内存管理","level":"1.4.9","depth":2,"path":"进阶/高级/内存管理.md","ref":"进阶/高级/内存管理.md","articles":[]},"previous":{"title":"中断延迟","level":"1.4.7","depth":2,"path":"进阶/高级/中断延迟.md","ref":"进阶/高级/中断延迟.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prismx","-highlight","-search","duoshuo","ga","theme-comscore"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-80700049-1"},"duoshuo":{"short_name":"tangguocheng","theme":"default"},"prismx":{"css":["prismjs/themes/prism-tomorrow.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"mobi":{"fontSize":12,"footerTemplate":null,"headerTemplate":null,"margin":{"bottom":36,"left":62,"right":62,"top":36},"pageNumbers":false,"paperSize":"a4"},"theme":"default","author":"tangguocheng","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"freeRTOS中文文档","language":"Chinese","links":{"sidebar":{"博客":"http://www.xn--4gqa63c686ta68iba.ren/"}},"gitbook":"*","description":"freeRTOS中文文档","extension":null},"file":{"path":"进阶/高级/静态分配与动态分配.md","mtime":"2016-09-08T09:47:19.573Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-18T09:07:11.640Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-duoshuo/duoshuo.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

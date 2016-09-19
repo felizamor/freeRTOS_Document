@@ -1,0 +1,836 @@
+
+<!DOCTYPE HTML>
+<html lang="Chinese" >
+    <head>
+        <title>跟踪特性 · freeRTOS中文文档</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="author" content="tangguocheng">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prismx/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="低功耗支持.html" />
+    
+    
+    <link rel="prev" href="配置文件.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.xn--4gqa63c686ta68iba.ren/" target="_blank" class="custom-link">博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    关于
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../简介/freeRTOS介绍.html">
+            
+                <a href="../../简介/freeRTOS介绍.html">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../简介/编码规则和风格.html">
+            
+                <a href="../../简介/编码规则和风格.html">
+            
+                    
+                    编码规则和风格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../简介/许可.html">
+            
+                <a href="../../简介/许可.html">
+            
+                    
+                    许可
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../简介/快速开始指南.html">
+            
+                <a href="../../简介/快速开始指南.html">
+            
+                    
+                    快速开始指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../入门/readme.html">
+            
+                <a href="../../入门/readme.html">
+            
+                    
+                    入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../入门/任务和协程/readme.html">
+            
+                <a href="../../入门/任务和协程/readme.html">
+            
+                    
+                    任务和协程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../入门/任务和协程/任务.html">
+            
+                <a href="../../入门/任务和协程/任务.html">
+            
+                    
+                    任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../入门/任务和协程/协程.html">
+            
+                <a href="../../入门/任务和协程/协程.html">
+            
+                    
+                    协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../入门/通信机制/readme.html">
+            
+                <a href="../../入门/通信机制/readme.html">
+            
+                    
+                    通信机制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../入门/通信机制/队列.html">
+            
+                <a href="../../入门/通信机制/队列.html">
+            
+                    
+                    队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../入门/通信机制/二值信号量.html">
+            
+                <a href="../../入门/通信机制/二值信号量.html">
+            
+                    
+                    二值信号量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../入门/通信机制/计数信号量.html">
+            
+                <a href="../../入门/通信机制/计数信号量.html">
+            
+                    
+                    计数信号量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../../入门/通信机制/互斥量.html">
+            
+                <a href="../../入门/通信机制/互斥量.html">
+            
+                    
+                    互斥量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../../入门/通信机制/递归互斥量.html">
+            
+                <a href="../../入门/通信机制/递归互斥量.html">
+            
+                    
+                    递归互斥量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../../入门/通信机制/任务通知.html">
+            
+                <a href="../../入门/通信机制/任务通知.html">
+            
+                    
+                    任务通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../入门/事件组/事件组.html">
+            
+                <a href="../../入门/事件组/事件组.html">
+            
+                    
+                    事件组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../入门/软件定时器/软件定时器.html">
+            
+                <a href="../../入门/软件定时器/软件定时器.html">
+            
+                    
+                    软件定时器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../readme.md">
+            
+                <span>
+            
+                    
+                    进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../源代码组织结构/源代码组织结构.html">
+            
+                <a href="../源代码组织结构/源代码组织结构.html">
+            
+                    
+                    源代码组织结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="配置文件.html">
+            
+                <a href="配置文件.html">
+            
+                    
+                    配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="跟踪特性.html">
+            
+                <a href="跟踪特性.html">
+            
+                    
+                    跟踪特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="低功耗支持.html">
+            
+                <a href="低功耗支持.html">
+            
+                    
+                    低功耗支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="运行时间统计.html">
+            
+                <a href="运行时间统计.html">
+            
+                    
+                    运行时间统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="队列集合.html">
+            
+                <a href="队列集合.html">
+            
+                    
+                    队列集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="中断延迟.html">
+            
+                <a href="中断延迟.html">
+            
+                    
+                    中断延迟
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="静态分配与动态分配.html">
+            
+                <a href="静态分配与动态分配.html">
+            
+                    
+                    静态和动态内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="内存管理.html">
+            
+                <a href="内存管理.html">
+            
+                    
+                    内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="栈溢出检测.html">
+            
+                <a href="栈溢出检测.html">
+            
+                    
+                    栈溢出检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="钩子函数.html">
+            
+                <a href="钩子函数.html">
+            
+                    
+                    钩子函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="线程本地存储.html">
+            
+                <a href="线程本地存储.html">
+            
+                    
+                    线程本地存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="移植指南.html">
+            
+                <a href="移植指南.html">
+            
+                    
+                    移植指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path=".">
+            
+                <span>
+            
+                    
+                    在windows上模拟
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >跟踪特性</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</h1><p>&#x8DDF;&#x8E2A;&#x94A9;&#x5B50;&#x5B8F;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x5F3A;&#x5927;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x7528;&#x6765;&#x6536;&#x96C6;&#x5D4C;&#x5165;&#x5F0F;&#x5E94;&#x7528;&#x7684;&#x76F8;&#x5173;&#x6570;&#x636E;&#x3002;freeRTOS&#x63D0;&#x4F9B;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x8DDF;&#x8E2A;&#x5B8F;&#x662F;&#x7A7A;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x9700;&#x6C42;&#x8BBE;&#x8BA1;&#x5B8F;&#x9700;&#x8981;&#x8DDF;&#x8E2A;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E0D;&#x4F7F;&#x7528;&#x7684;&#x7A7A;&#x7684;&#x5B8F;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x65F6;&#x5E8F;&#x3002;</p><h1 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h1><p>&#x5982;&#x4E0B;&#x51E0;&#x4E2A;&#x4F7F;&#x7528;&#x8DDF;&#x8E2A;&#x5B8F;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p><ul><li>&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x8F93;&#x51FA;&#xFF0C;&#x7528;&#x6765;&#x8868;&#x660E;&#x5F53;&#x524D;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x903B;&#x8F91;&#x5206;&#x6790;&#x4EEA;&#x6765;&#x89C2;&#x5BDF;&#x3001;&#x8BB0;&#x5F55;&#x3001;&#x5206;&#x6790;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x5E8F;&#x5217;&#x53CA;&#x65F6;&#x5E8F;
+</li>
+<li>&#x76F8;&#x4F3C;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x6A21;&#x62DF;&#x8F93;&#x51FA;&#xFF0C;&#x6BD4;&#x5982;&#x7535;&#x538B;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x793A;&#x6CE2;&#x5668;&#x6765;&#x89C2;&#x5BDF;&#x65F6;&#x5E8F;
+</li>
+<li>&#x8BB0;&#x5F55;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x5E8F;&#x5217;&#x3001;&#x65F6;&#x5E8F;&#x3001;RTOS&#x5185;&#x6838;&#x4E8B;&#x4EF6;&#x548C;API&#x8C03;&#x7528;&#xFF0C;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x79BB;&#x7EBF;&#x5206;&#x6790;&#x5E94;&#x7528;
+</li>
+<li>&#x5728;&#x7B2C;&#x4E09;&#x65B9;&#x8C03;&#x8BD5;&#x5668;&#x4E2D;&#x96C6;&#x6210;RTOS&#x5185;&#x6838;&#x4E8B;&#x4EF6;
+</li></ul>
+<h3 id="&#x4F8B;&#x5B50;1">&#x4F8B;&#x5B50;1</h3><p>&#x4E3A;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x7684;&#x6216;&#x8005;&#x6A21;&#x62DF;&#x7684;&#x6807;&#x7B7E;&#x503C;&#xFF0C;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x6807;&#x7B7E;&#x503C;&#x90FD;&#x662F;&#x7279;&#x5B9A;&#x7684;&#xFF0C;&#x5C06;<code>traceSWITCHED_IN<span class="token punctuation">(</span><span class="token punctuation">)</span></code>&#x5B8F;&#x8BBE;&#x7F6E;&#x4E3A;&#x8F93;&#x51FA;&#x8FD9;&#x4E2A;&#x6807;&#x7B7E;&#x503C;&#xFF1A;</p><pre><code>/* &#x7B2C;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x6807;&#x7B7E;&#x503C;&#x8BBE;&#x4E3A;1\. */
+void vTask1<span class="token punctuation">(</span> void *pvParameters <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    /* &#x4F7F;&#x7528;&#x7535;&#x538B;&#x706F;&#x7B49;&#x7EA7;1&#x4EE3;&#x8868;&#x4EFB;&#x52A1;1 */
+    vTaskSetApplicationTaskTag<span class="token punctuation">(</span> NULL, <span class="token punctuation">(</span> void * <span class="token punctuation">)</span> 1 <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    for<span class="token punctuation">(</span> <span class="token punctuation">;</span><span class="token punctuation">;</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        /* Task code goes here. */
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+/*************************************************/
+
+/* &#x7B2C;&#x4E8C;&#x4E2A;&#x4EFB;&#x52A1;&#x6807;&#x7B7E;&#x503C;&#x8BBE;&#x4E3A;2. */
+void vTask2<span class="token punctuation">(</span> void *pvParameters <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    /* &#x4F7F;&#x7528;&#x7535;&#x538B;&#x7B49;&#x7EA7;2&#x4EE3;&#x8868;&#x4EFB;&#x52A1;2 */
+    vTaskSetApplicationTaskTag<span class="token punctuation">(</span> NULL, <span class="token punctuation">(</span> void * <span class="token punctuation">)</span> 2 <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    for<span class="token punctuation">(</span> <span class="token punctuation">;</span><span class="token punctuation">;</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        /* Task code goes here. */
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+/*************************************************/
+
+/* &#x8BBE;&#x7F6E;&#x5B8F;&#x8F93;&#x51FA;&#x4EFB;&#x52A1;&#x7684;&#x6807;&#x7B7E;&#x503C;&#xFF0C;&#x4F7F;&#x7528;&#x901A;&#x9053;0. */
+<span class="token comment" spellcheck="true">#define traceTASK_SWITCHED_IN() vSetAnalogueOutput( 0, (int)pxCurrentTCB-&gt;pxTaskTag )</span></code></pre>
+<h3 id="&#x4F8B;&#x5B50;2">&#x4F8B;&#x5B50;2</h3><p>API&#x8C03;&#x7528;&#x8BB0;&#x5F55;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#x7684;&#x539F;&#x56E0;&#xFF0C;RTOS&#x5185;&#x6838;&#x8C03;&#x7528;&#x8BB0;&#x5F55;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x5E8F;&#x5217;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p><pre><code>/* traceBLOCKING_ON_QUEUE_RECEIVE<span class="token punctuation">(</span><span class="token punctuation">)</span> &#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#x7684;&#x539F;&#x56E0; */
+<span class="token comment" spellcheck="true">#define traceBLOCKING_ON_QUEUE_RECEIVE(xQueue)      \</span>
+    ulSwitchReason <span class="token operator">=</span> reasonBLOCKING_ON_QUEUE_READ<span class="token punctuation">;</span>
+
+/* log_event<span class="token punctuation">(</span><span class="token punctuation">)</span> &#x7528;&#x6765;&#x8BB0;&#x5F55;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x53CA;&#x539F;&#x56E0; */
+<span class="token comment" spellcheck="true">#define traceTASK_SWITCHED_OUT()                    \</span>
+    log_event<span class="token punctuation">(</span> pxCurrentTCB, ulSwitchReason <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="&#x5B9A;&#x4E49;">&#x5B9A;&#x4E49;</h2><p>&#x5728;&#x4E2D;&#x65AD;&#x4E2D;&#x8C03;&#x7528;&#x7684;&#x5B8F;&#x5FC5;&#x987B;&#x662F;&#x77ED;&#x5C0F;&#x7CBE;&#x608D;&#x7684;&#xFF0C;&#x8BBE;&#x7F6E;&#x53D8;&#x91CF;&#x3001;&#x5199;&#x8DDF;&#x8E2A;&#x5BC4;&#x5B58;&#x5668;&#x3001;&#x7AEF;&#x53E3;&#x8F93;&#x51FA;&#x662F;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x50CF;<code>fprintf<span class="token punctuation">(</span><span class="token punctuation">)</span></code>&#x8FD9;&#x7C7B;&#x8BD5;&#x56FE;&#x8F93;&#x51FA;&#x6570;&#x636E;&#x5230;&#x5B58;&#x50A8;&#x5668;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x56E0;&#x4E3A;&#x5360;&#x7528;&#x65F6;&#x95F4;&#x592A;&#x957F;&#xFF0C;&#x800C;&#x4E0D;&#x88AB;&#x5141;&#x8BB8;&#x3002;</p><p>&#x6240;&#x6709;&#x7684;&#x5B8F;&#x5B9A;&#x4E49;&#x5FC5;&#x987B;&#x5728;&#x5305;&#x542B;<code>freeRTOS.h</code>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E4B;&#x524D;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x5728;<code>freeRTOS.h</code>&#x6587;&#x4EF6;&#x7684;&#x5F00;&#x5934;&#x5B9A;&#x4E49;&#x8FD9;&#x4E9B;&#x5B8F;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x5355;&#x72EC;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#xFF0C;&#x4F46;&#x662F;&#x5305;&#x542B;&#x987A;&#x5E8F;&#x9700;&#x8981;&#x5728;<code>freeRTOS.h</code>&#x4E4B;&#x524D;&#x3002;</p><p>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x4E86;&#x8FD9;&#x4E9B;&#x53EF;&#x7528;&#x7684;&#x5B8F;&#xFF0C;&#x5B8F;&#x7684;&#x53C2;&#x6570;&#x6697;&#x793A;&#x4E86;&#x4E8B;&#x4EF6;&#x8BB0;&#x5F55;&#x65F6;&#x7684;&#x5173;&#x8054;&#x5BF9;&#x8C61;(&#x961F;&#x5217;&#x3001;&#x4E92;&#x65A5;&#x91CF;&#x3001;&#x4FE1;&#x53F7;&#x91CF;)</p><table border="1" cellpadding="3">
+<tr>
+    <td><font face="arial"><b><div align="center">Macro definition</div></b></font></td><td><font face="arial"><b><div align="center">Description</div></b></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTASK_INCREMENT_TICK(xTickCount)</font></font></td><td><font face="arial"><font face="arial">Called during the tick interrupt.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTASK_SWITCHED_OUT()</font></font></td><td><font face="arial"><font face="arial">Called before a new task is selected to run.  At this point pxCurrentTCB contains the handle of the task about to leave the Running state.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTASK_SWITCHED_IN()</font></font></td><td><font face="arial"><font face="arial">Called after a task has been selected to run.  At this point pxCurrentTCB contains the handle of the task about to enter the Running state.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceMOVED_TASK_TO_READY_STATE(xTask)</font></font></td><td><font face="arial"><font face="arial">Called when a task is transitioned into the Ready state.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceBLOCKING_ON_QUEUE_RECEIVE(xQueue)</font></font></td><td><font face="arial"><font face="arial">Indicates that the currently executing task is about to block following an attempt to read from an empty queue, or an attempt to &apos;take&apos; an empty semaphore or mutex.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceBLOCKING_ON_QUEUE_SEND(xQueue)</font></font></td><td><font face="arial"><font face="arial">Indicates that the currently executing task is about to block following an attempt to write to a full queue.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceGIVE_MUTEX_RECURSIVE(xMutex)</font></font></td><td><font face="arial"><font face="arial">Called from within xSemaphoreGiveRecursive().</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceGIVE_MUTEX_RECURSIVE_FAILED(xMutex)</font></font></td><td><font face="arial"><font face="arial">Called from within xSemaphoreGiveRecursive().</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceQUEUE_CREATE(pxNewQueue)</font></font></td><td><font face="arial"><font face="arial">Called from within xQueueCreate() or xQueueCreateStatic() if the queue was successfully created.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceQUEUE_CREATE_FAILED()</font></font></td><td><font face="arial"><font face="arial">Called from within xQueueCreate() or xQueueCreateStatic() if the queue was not successfully created due to there being insufficient heap memory available.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceCREATE_MUTEX(pxNewMutex)</font></font></td><td><font face="arial"><font face="arial">Called from within xSemaphoreCreateMutex() if the mutex was successfully created.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceCREATE_MUTEX_FAILED()</font></font></td><td><font face="arial"><font face="arial">Called from within xSemaphoreCreateMutex() if the mutex was not successfully created due to there being insufficient heap memory available.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceGIVE_MUTEX_RECURSIVE(xMutex)</font></font></td><td><font face="arial"><font face="arial">Called from within xSemaphoreGiveRecursive() if the mutex was successfully &apos;given&apos;.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceGIVE_MUTEX_RECURSIVE_FAILED(xMutex)</font></font></td><td><font face="arial"><font face="arial">Called from within xSemaphoreGiveRecursive() if the mutex was not successfully given as the calling task was not the mutex owner.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTAKE_MUTEX_RECURSIVE(xMutex)</font></font></td><td><font face="arial"><font face="arial">Called from within xQueueTakeMutexRecursive().</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceCREATE_COUNTING_SEMAPHORE()</font></font></td><td><font face="arial"><font face="arial">Called from within xSemaphoreCreateCounting() if the semaphore was successfully created.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceCREATE_COUNTING_SEMAPHORE_FAILED()</font></font></td><td><font face="arial"><font face="arial">Called from within xSemaphoreCreateCounting() if the semaphore was not successfully created due to insufficient heap memory being available.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceQUEUE_SEND(xQueue)</font></font></td><td><font face="arial"><font face="arial">Called from within xQueueSend(), xQueueSendToFront(), xQueueSendToBack(), or any of the semaphore &apos;give&apos; functions, when the queue send was successful.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceQUEUE_SEND_FAILED(xQueue)</font></font></td><td><font face="arial"><font face="arial">Called from within xQueueSend(), xQueueSendToFront(), xQueueSendToBack(), or any of the semaphore &apos;give&apos; functions when the queue send operation failed due to the queue being full (after any block time that was specified).</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceQUEUE_RECEIVE(xQueue)</font></font></td><td><font face="arial"><font face="arial">Called from within xQueueReceive() or any of the semaphore &apos;take&apos; functions when the queue receive was successful.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceQUEUE_RECEIVE_FAILED(xQueue)</font></font></td><td><font face="arial"><font face="arial">Called from within xQueueReceive() or any of the semaphore &apos;take&apos; functions when the queue receive operation failed because the queue was empty (after any block time that was specified).</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceQUEUE_PEEK(xQueue)</font></font></td><td><font face="arial"><font face="arial">Called from within xQueuePeek()</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceQUEUE_SEND_FROM_ISR(xQueue)</font></font></td><td><font face="arial"><font face="arial">Called from within xQueueSendFromISR() when the send operation was successful.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceQUEUE_SEND_FROM_ISR_FAILED(xQueue)</font></font></td><td><font face="arial"><font face="arial">Called from within xQueueSendFromISR() when the send operation failed due to the queue already being full.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceQUEUE_RECEIVE_FROM_ISR(xQueue)</font></font></td><td><font face="arial"><font face="arial">Called from within xQueueReceiveFromISR() when the receive operation was successful.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceQUEUE_RECEIVE_FROM_ISR_FAILED(xQueue)</font></font></td><td><font face="arial"><font face="arial">Called from within xQueueReceiveFromISR() when the receive operation failed due to the queue already being empty.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceQUEUE_DELETE(xQueue)</font></font></td><td><font face="arial"><font face="arial">Called from within vQueueDelete().</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTASK_CREATE(xTask)</font></font></td><td><font face="arial"><font face="arial">Called from within xTaskCreate() (or <a href="../../xTaskCreateStatic.html">xTaskCreateStatic()</a>) when the task is successfully created.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTASK_CREATE_FAILED(pxNewTCB)</font></font></td><td><font face="arial"><font face="arial">Called from within xTaskCreate() (or <a href="../../xTaskCreateStatic.html">xTaskCreateStatic()</a>) when the task was not successfully created due to there being insufficient heap space available.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTASK_DELETE(xTask)</font></font></td><td><font face="arial"><font face="arial">Called from within vTaskDelete().</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTASK_DELAY_UNTIL()</font></font></td><td><font face="arial"><font face="arial">Called from within vTaskDelayUntil().</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTASK_DELAY()</font></font></td><td><font face="arial"><font face="arial">Called from within vTaskDelay().</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTASK_PRIORITY_SET(xTask,uxNewPriority)</font></font></td><td><font face="arial"><font face="arial">Called from within vTaskPrioritySet().</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTASK_SUSPEND(xTask)</font></font></td><td><font face="arial"><font face="arial">Called from within vTaskSuspend().</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTASK_RESUME(xTask)</font></font></td><td><font face="arial"><font face="arial">Called from within vTaskResume().</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTASK_RESUME_FROM_ISR(xTask)</font></font></td><td><font face="arial"><font face="arial">Called from within xTaskResumeFromISR().</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTIMER_COMMAND_RECEIVED(pxTimer, xCommandID, xCommandValue)</font></font></td><td><font face="arial"><font face="arial">Called within the timer service task each time it receives a command, before the command is actually processed.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTIMER_COMMAND_SEND(pxTimer, xCommandID, xOptionalValue, xStatus)</font></font></td><td><font face="arial"><font face="arial">Called from within any API function that sends a command to the timer service task, for example, xTimerReset(), xTimerStop(), etc.  xStatus will be pdFAIL if the command was not successfully sent to the timer command queue.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTIMER_CREATE(pxNewTimer)</font></font></td><td><font face="arial"><font face="arial">Called from within xTimerCreate() if the timer was successfully created.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTIMER_CREATE_FAILED()</font></font></td><td><font face="arial"><font face="arial">Called from within xTimerCreate() if the timer was not successfully created due to there being insufficient heap memory available.</font></font></td>
+</tr>
+<tr>
+    <td><font face="arial"><font face="courier">traceTIMER_EXPIRED(pxTimer)</font></font></td><td><font face="arial"><font face="arial">Called when a software timer expires, before the timer callback is executed.</font></font></td>
+</tr>
+</table>
+
+
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="配置文件.html" class="navigation navigation-prev " aria-label="Previous page: 配置文件">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="低功耗支持.html" class="navigation navigation-next " aria-label="Next page: 低功耗支持">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"跟踪特性","level":"1.4.3","depth":2,"next":{"title":"低功耗支持","level":"1.4.4","depth":2,"path":"进阶/高级/低功耗支持.md","ref":"进阶/高级/低功耗支持.md","articles":[]},"previous":{"title":"配置文件","level":"1.4.2","depth":2,"path":"进阶/高级/配置文件.md","ref":"进阶/高级/配置文件.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prismx","-highlight","-search","duoshuo","ga","theme-comscore"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-80700049-1"},"duoshuo":{"short_name":"tangguocheng","theme":"default"},"prismx":{"css":["prismjs/themes/prism-tomorrow.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"mobi":{"fontSize":12,"footerTemplate":null,"headerTemplate":null,"margin":{"bottom":36,"left":62,"right":62,"top":36},"pageNumbers":false,"paperSize":"a4"},"theme":"default","author":"tangguocheng","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"freeRTOS中文文档","language":"Chinese","links":{"sidebar":{"博客":"http://www.xn--4gqa63c686ta68iba.ren/"}},"gitbook":"*","description":"freeRTOS中文文档","extension":null},"file":{"path":"进阶/高级/跟踪特性.md","mtime":"2016-09-08T10:02:58.006Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-18T09:07:11.640Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-duoshuo/duoshuo.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

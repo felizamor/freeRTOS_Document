@@ -1,0 +1,2 @@
+freeRTOS的源代码中提供了windows下的示例代码，初学者可以使用这个示例代码了解freeRTOS，有visual studio和Eclipse两个版本。接下来将会介绍(只介绍使用visual studio 2015)这个例程的使用。
+

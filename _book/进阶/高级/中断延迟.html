@@ -1,0 +1,681 @@
+
+<!DOCTYPE HTML>
+<html lang="Chinese" >
+    <head>
+        <title>中断延迟 · freeRTOS中文文档</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="author" content="tangguocheng">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prismx/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="静态分配与动态分配.html" />
+    
+    
+    <link rel="prev" href="队列集合.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.xn--4gqa63c686ta68iba.ren/" target="_blank" class="custom-link">博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    关于
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../简介/freeRTOS介绍.html">
+            
+                <a href="../../简介/freeRTOS介绍.html">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../简介/编码规则和风格.html">
+            
+                <a href="../../简介/编码规则和风格.html">
+            
+                    
+                    编码规则和风格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../简介/许可.html">
+            
+                <a href="../../简介/许可.html">
+            
+                    
+                    许可
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../简介/快速开始指南.html">
+            
+                <a href="../../简介/快速开始指南.html">
+            
+                    
+                    快速开始指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../入门/readme.html">
+            
+                <a href="../../入门/readme.html">
+            
+                    
+                    入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../入门/任务和协程/readme.html">
+            
+                <a href="../../入门/任务和协程/readme.html">
+            
+                    
+                    任务和协程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../入门/任务和协程/任务.html">
+            
+                <a href="../../入门/任务和协程/任务.html">
+            
+                    
+                    任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../入门/任务和协程/协程.html">
+            
+                <a href="../../入门/任务和协程/协程.html">
+            
+                    
+                    协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../入门/通信机制/readme.html">
+            
+                <a href="../../入门/通信机制/readme.html">
+            
+                    
+                    通信机制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../入门/通信机制/队列.html">
+            
+                <a href="../../入门/通信机制/队列.html">
+            
+                    
+                    队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../入门/通信机制/二值信号量.html">
+            
+                <a href="../../入门/通信机制/二值信号量.html">
+            
+                    
+                    二值信号量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../入门/通信机制/计数信号量.html">
+            
+                <a href="../../入门/通信机制/计数信号量.html">
+            
+                    
+                    计数信号量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../../入门/通信机制/互斥量.html">
+            
+                <a href="../../入门/通信机制/互斥量.html">
+            
+                    
+                    互斥量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../../入门/通信机制/递归互斥量.html">
+            
+                <a href="../../入门/通信机制/递归互斥量.html">
+            
+                    
+                    递归互斥量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../../入门/通信机制/任务通知.html">
+            
+                <a href="../../入门/通信机制/任务通知.html">
+            
+                    
+                    任务通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../入门/事件组/事件组.html">
+            
+                <a href="../../入门/事件组/事件组.html">
+            
+                    
+                    事件组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../入门/软件定时器/软件定时器.html">
+            
+                <a href="../../入门/软件定时器/软件定时器.html">
+            
+                    
+                    软件定时器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../readme.md">
+            
+                <span>
+            
+                    
+                    进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../源代码组织结构/源代码组织结构.html">
+            
+                <a href="../源代码组织结构/源代码组织结构.html">
+            
+                    
+                    源代码组织结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="配置文件.html">
+            
+                <a href="配置文件.html">
+            
+                    
+                    配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="跟踪特性.html">
+            
+                <a href="跟踪特性.html">
+            
+                    
+                    跟踪特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="低功耗支持.html">
+            
+                <a href="低功耗支持.html">
+            
+                    
+                    低功耗支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="运行时间统计.html">
+            
+                <a href="运行时间统计.html">
+            
+                    
+                    运行时间统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="队列集合.html">
+            
+                <a href="队列集合.html">
+            
+                    
+                    队列集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.7" data-path="中断延迟.html">
+            
+                <a href="中断延迟.html">
+            
+                    
+                    中断延迟
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="静态分配与动态分配.html">
+            
+                <a href="静态分配与动态分配.html">
+            
+                    
+                    静态和动态内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="内存管理.html">
+            
+                <a href="内存管理.html">
+            
+                    
+                    内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="栈溢出检测.html">
+            
+                <a href="栈溢出检测.html">
+            
+                    
+                    栈溢出检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="钩子函数.html">
+            
+                <a href="钩子函数.html">
+            
+                    
+                    钩子函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="线程本地存储.html">
+            
+                <a href="线程本地存储.html">
+            
+                    
+                    线程本地存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="移植指南.html">
+            
+                <a href="移植指南.html">
+            
+                    
+                    移植指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path=".">
+            
+                <span>
+            
+                    
+                    在windows上模拟
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >中断延迟</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x4EC0;&#x4E48;&#x53EB;&#x4E2D;&#x65AD;&#x5EF6;&#x8FDF;">&#x4EC0;&#x4E48;&#x53EB;&#x4E2D;&#x65AD;&#x5EF6;&#x8FDF;</h2><p>&#x6240;&#x8C13;&#x4E2D;&#x65AD;&#x5EF6;&#x8FDF;&#xFF0C;&#x5176;&#x5B9E;&#x5728;&#x7F16;&#x5199;&#x88F8;&#x673A;&#x7A0B;&#x5E8F;&#x4E2D;&#x7ECF;&#x5E38;&#x88AB;&#x7528;&#x5230;&#xFF0C;&#x6211;&#x4EEC;&#x65F6;&#x5E38;&#x9700;&#x8981;&#x9760;&#x4E2D;&#x65AD;&#x6765;&#x6355;&#x83B7;&#x76F8;&#x5173;&#x7684;&#x6570;&#x636E;&#x6216;&#x8005;&#x4E8B;&#x4EF6;&#x8F93;&#x5165;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x4E2D;&#x65AD;&#x4E2D;&#x7F6E;&#x8D77;&#x76F8;&#x5173;&#x6807;&#x5FD7;&#x4F4D;&#xFF0C;&#x5728;&#x4E3B;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x6B7B;&#x5FAA;&#x73AF;&#x4E2D;&#x68C0;&#x67E5;&#x8FD9;&#x4E2A;&#x6807;&#x5FD7;&#x4F4D;&#xFF0C;&#x5982;&#x679C;&#x7F6E;&#x8D77;&#xFF0C;&#x8BF4;&#x660E;&#x4E2D;&#x65AD;&#x53D1;&#x751F;&#x4E86;&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x5904;&#x7406;&#x3002;&#x4E0E;&#x4E4B;&#x7C7B;&#x4F3C;&#x7684;&#xFF0C;freeRTOS&#x7684;&#x4E2D;&#x65AD;&#x5EF6;&#x8FDF;&#x662F;&#x4E00;&#x4E2A;&#x9053;&#x7406;&#xFF0C;&#x4E2D;&#x65AD;&#x670D;&#x52A1;&#x51FD;&#x6570;&#x4E0D;&#x505A;&#x76F8;&#x5173;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x800C;&#x662F;&#x7531;&#x968F;&#x540E;&#x8FD0;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x6765;&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x76F8;&#x6BD4;&#x76F4;&#x63A5;&#x5728;&#x4E2D;&#x65AD;&#x670D;&#x52A1;&#x51FD;&#x6570;&#x4E2D;&#x5904;&#x7406;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x5EF6;&#x8FDF;&#xFF0C;&#x597D;&#x5904;&#x662F;&#x4E0D;&#x4F1A;&#x5360;&#x7528;&#x592A;&#x591A;&#x7684;&#x4E2D;&#x65AD;&#x65F6;&#x95F4;&#xFF0C;&#x4F7F;&#x5F97;&#x5B9E;&#x65F6;&#x6027;&#x53D8;&#x5DEE;&#x3002;</p><p>&#x8FD9;&#x79CD;&#x673A;&#x5236;&#x5BFC;&#x81F4;&#x7684;&#x5EF6;&#x8FDF;&#xFF0C;&#x5728;&#x76F8;&#x5E94;&#x7684;&#x5904;&#x7406;&#x4EFB;&#x52A1;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x8F83;&#x9AD8;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x51E0;&#x4E4E;&#x4E0E;&#x76F4;&#x63A5;&#x5728;&#x4E2D;&#x65AD;&#x4E2D;&#x5904;&#x7406;&#x7684;&#x6548;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p><p><img src="http://www.freertos.org/rtos_deferred_interrupt_processing.jpg"></p><p>&#x5728;&#x4E2D;&#x65AD;&#x670D;&#x52A1;&#x51FD;&#x6570;&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#xFF0C;&#x56E0;&#x4E3A;&#x5904;&#x7406;&#x4EFB;&#x52A1;&#x5177;&#x6709;&#x66F4;&#x9AD8;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x800C;&#x5F97;&#x5230;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x3002;</p><p>&#x5927;&#x591A;&#x6570;&#x7684;&#x5DE5;&#x7A0B;&#x5E08;&#x90FD;&#x5728;&#x8BD5;&#x56FE;&#x6700;&#x5C0F;&#x5316;&#x56E0;&#x4E3A;&#x4E2D;&#x65AD;&#x5BFC;&#x81F4;&#x7684;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x7684;&#x6296;&#x52A8;&#xFF0C;&#x56E0;&#x6B64;&#x4E2D;&#x65AD;&#x5EF6;&#x8FDF;&#x8FD9;&#x4E2A;&#x673A;&#x5236;&#x662F;&#x5F88;&#x6709;&#x5FC5;&#x8981;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x5EF6;&#x8FDF;&#x65F6;&#x95F4;&#x662F;&#x53EF;&#x4EE5;&#x786E;&#x5B9A;&#x7684;&#xFF08;&#x963B;&#x585E;&#x5F53;&#x524D;&#x4EFB;&#x52A1;&#x7684;&#x65F6;&#x95F4;&#x52A0;&#x4E0A;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#x7684;&#x65F6;&#x95F4;&#xFF09;&#xFF0C;&#x5728;&#x5982;&#x4E0B;&#x7684;&#x60C5;&#x51B5;&#x4E2D;&#x65AD;&#x5EF6;&#x8FDF;&#x7684;&#x673A;&#x5236;&#x662F;&#x5F88;&#x6709;&#x76CA;&#x7684;&#xFF1A;</p><ul><li>&#x9700;&#x8981;&#x6267;&#x884C;&#x5927;&#x91CF;&#x64CD;&#x4F5C;
+</li>
+<li>&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5168;&#x90E8;&#x5CF0;RTOS API&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4EC5;&#x4EC5;&#x4E2D;&#x65AD;&#x5B89;&#x5168;&#x7684;API
+</li>
+<li>&#x9700;&#x8981;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;&#x5728;&#x5408;&#x7406;&#x7684;&#x8303;&#x56F4;&#x5185;&#x624D;&#x6267;&#x884C;&#x7684;&#x52A8;&#x4F5C;
+</li></ul>
+<h2 id="&#x4E2D;&#x65AD;&#x5EF6;&#x8FDF;&#x5230;&#x4EFB;&#x52A1;&#x7684;&#x6280;&#x672F;&#x5B9E;&#x73B0;">&#x4E2D;&#x65AD;&#x5EF6;&#x8FDF;&#x5230;&#x4EFB;&#x52A1;&#x7684;&#x6280;&#x672F;&#x5B9E;&#x73B0;</h2><ol><li>&#x96C6;&#x4E2D;&#x5904;&#x7406;&#x4E2D;&#x65AD;&#x5EF6;&#x8FDF;
+</li></ol>
+<p>&#x6240;&#x8C13;&#x96C6;&#x4E2D;&#x5904;&#x7406;&#x4E2D;&#x65AD;&#x5EF6;&#x8FDF;&#xFF0C;&#x662F;&#x4F7F;&#x7528;<code>xTimerPendFunctionCallFromISR<span class="token punctuation">(</span><span class="token punctuation">)</span></code>API&#x5C06;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x63D0;&#x4F9B;&#x7ED9;RTOS&#x7684;&#x5185;&#x6838;&#x5B88;&#x62A4;&#x4EFB;&#x52A1;&#x3002;&#x901A;&#x8FC7;&#x4F20;&#x9012;&#x5904;&#x7406;&#x51FD;&#x6570;&#x7684;&#x6307;&#x9488;&#xFF0C;&#x5728;&#x4E2D;&#x65AD;&#x670D;&#x52A1;&#x51FD;&#x6570;&#x9000;&#x51FA;&#x540E;&#xFF0C;&#x76F8;&#x5E94;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;&#x4F1A;&#x5F97;&#x5230;&#x6267;&#x884C;&#x3002;&#x4ECE;&#x4E2D;&#x65AD;&#x9000;&#x51FA;&#xFF0C;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;&#x5F97;&#x5230;&#x6267;&#x884C;&#xFF0C;&#x5728;&#x65F6;&#x95F4;&#x4E0A;&#x662F;&#x8FDE;&#x7EED;&#x7684;&#xFF0C;&#x597D;&#x50CF;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x76F4;&#x63A5;&#x7531;&#x4E2D;&#x65AD;&#x8C03;&#x7528;&#x4E00;&#x6837;&#xFF0C;&#x5177;&#x4F53;&#x53C2;&#x8003;<code>xTimerPendFunctionCallFromISR<span class="token punctuation">(</span><span class="token punctuation">)</span></code>&#x7684;<a href="http://www.freertos.org/xTimerPendFunctionCallFromISR.html" target="_blank">&#x8BF4;&#x660E;&#x6587;&#x6863;</a></p><p>&#x96C6;&#x4E2D;&#x5904;&#x7406;&#x4E2D;&#x65AD;&#x5EF6;&#x8FDF;&#x7684;&#x597D;&#x5904;&#x662F;&#x5185;&#x5B58;&#x5360;&#x7528;&#x8F83;&#x5C0F;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x6570;&#x636E;&#x53BB;&#x8BB0;&#x5F55;&#x4E2D;&#x65AD;&#x6E90;&#xFF0C;&#x6BCF;&#x4E2A;&#x5EF6;&#x8FDF;&#x7684;&#x4E2D;&#x65AD;&#x5904;&#x7406;&#x51FD;&#x6570;&#x90FD;&#x7531;&#x540C;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x6765;&#x7BA1;&#x7406;&#x3002;</p><p>&#x7F3A;&#x70B9;&#x4E5F;&#x662F;&#x6709;&#x7684;&#xFF1A;</p><ul><li>&#x6240;&#x6709;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;&#x90FD;&#x6267;&#x884C;&#x5728;RTOS&#x7684;&#x5B88;&#x62A4;&#x4EFB;&#x52A1;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x6240;&#x6709;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x4F18;&#x5148;&#x7EA7;
+</li>
+<li>&#x5904;&#x7406;&#x51FD;&#x6570;&#x7684;&#x6307;&#x9488;&#x4F20;&#x9012;&#x4F7F;&#x7528;&#x5B9A;&#x65F6;&#x5668;&#x7684;&#x961F;&#x5217;&#xFF0C;&#x56E0;&#x6B64;RTOS&#x5B88;&#x62A4;&#x4EFB;&#x52A1;&#x8C03;&#x7528;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x7684;&#x987A;&#x5E8F;&#x662F;&#x961F;&#x5217;&#x7684;&#x63A5;&#x6536;&#x987A;&#x5E8F;&#xFF0C;&#x672A;&#x5FC5;&#x662F;&#x4E2D;&#x65AD;&#x7684;&#x53D1;&#x751F;&#x987A;&#x5E8F;
+</li>
+<li><p>&#x5BF9;&#x5B9A;&#x65F6;&#x5668;&#x961F;&#x5217;&#x7684;&#x5199;&#x548C;&#x8BFB;&#x9020;&#x6210;&#x4E86;&#x989D;&#x5916;&#x7684;&#x5EF6;&#x8FDF;</p></li>
+<li><p>&#x5E94;&#x7528;&#x7BA1;&#x7406;&#x4E2D;&#x65AD;&#x5EF6;&#x8FDF;</p></li></ul>
+<p>&#x5E94;&#x7528;&#x7BA1;&#x7406;&#x4E2D;&#x65AD;&#x5EF6;&#x8FDF;&#x5904;&#x7406;&#x6267;&#x884C;&#x5728;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x81EA;&#x5DF1;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#xFF0C;&#x56E0;&#x6B64;&#x5E26;&#x6765;&#x7684;&#x597D;&#x5904;&#x5728;&#x4E8E;&#xFF1A;</p><ul><li>&#x51CF;&#x5C11;&#x989D;&#x5916;&#x7684;&#x4E2D;&#x65AD;&#x5EF6;&#x8FDF;&#xFF08;&#x56E0;&#x4E3A;&#x5E76;&#x4E0D;&#x5728;&#x4F7F;&#x7528;&#x961F;&#x5217;&#x4F20;&#x9012;&#x51FD;&#x6570;&#x6307;&#x9488;&#xFF09;
+</li>
+<li>&#x6BCF;&#x4E2A;&#x4E2D;&#x65AD;&#x5904;&#x7406;&#x4EFB;&#x52A1;&#x53EF;&#x4EE5;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x5F97;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x4E2D;&#x65AD;&#x5177;&#x6709;&#x5339;&#x914D;&#x7684;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x5904;&#x7406;&#x4EFB;&#x52A1;
+</li></ul>
+<p>&#x7F3A;&#x70B9;&#x662F;&#x9700;&#x8981;&#x66F4;&#x591A;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x9605;&#x201C;&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x201D;&#x90E8;&#x5206;&#xFF0C;&#x5F53;&#x7136;&#x4F7F;&#x7528;&#x961F;&#x5217;&#x548C;&#x4FE1;&#x53F7;&#x91CF;&#x4E5F;&#x53EF;&#x4EE5;&#x5230;&#x8FBE;&#x76F8;&#x540C;&#x76EE;&#x7684;(&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x5360;&#x7528;&#x5185;&#x5B58;&#x4F1A;&#x5C0F;&#x4E9B;)&#x3002;</p>
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="队列集合.html" class="navigation navigation-prev " aria-label="Previous page: 队列集合">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="静态分配与动态分配.html" class="navigation navigation-next " aria-label="Next page: 静态和动态内存分配">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"中断延迟","level":"1.4.7","depth":2,"next":{"title":"静态和动态内存分配","level":"1.4.8","depth":2,"path":"进阶/高级/静态分配与动态分配.md","ref":"进阶/高级/静态分配与动态分配.md","articles":[]},"previous":{"title":"队列集合","level":"1.4.6","depth":2,"path":"进阶/高级/队列集合.md","ref":"进阶/高级/队列集合.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prismx","-highlight","-search","duoshuo","ga","theme-comscore"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-80700049-1"},"duoshuo":{"short_name":"tangguocheng","theme":"default"},"prismx":{"css":["prismjs/themes/prism-tomorrow.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"mobi":{"fontSize":12,"footerTemplate":null,"headerTemplate":null,"margin":{"bottom":36,"left":62,"right":62,"top":36},"pageNumbers":false,"paperSize":"a4"},"theme":"default","author":"tangguocheng","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"freeRTOS中文文档","language":"Chinese","links":{"sidebar":{"博客":"http://www.xn--4gqa63c686ta68iba.ren/"}},"gitbook":"*","description":"freeRTOS中文文档","extension":null},"file":{"path":"进阶/高级/中断延迟.md","mtime":"2016-09-08T09:24:18.998Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-18T09:07:11.640Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-duoshuo/duoshuo.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

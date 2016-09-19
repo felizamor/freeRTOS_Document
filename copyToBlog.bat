@@ -1,6 +1,6 @@
 @echo off
-echo "开始复制文件到博客文件夹"
-rd /s /q C:\tangguocheng\myBlog\source\freeRTOS
-md "C:\tangguocheng\myBlog\source\freeRTOS"
-xcopy C:\tangguocheng\freertos_doc\_book\*.* C:\tangguocheng\myBlog\source\freeRTOS /s /e /h /d /y /c
+echo "copy files to blog"
+rd /s /q F:\myBlog\source\freeRTOS
+md "F:\myBlog\source\freeRTOS"
+xcopy F:\freertos_doc\_book\*.* ..\myBlog\source\freeRTOS /s /e /h /d /y /c
 pause

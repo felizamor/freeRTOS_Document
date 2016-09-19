@@ -44,7 +44,7 @@
         "mobi": "styles/mobi.css",
         "epub": "styles/epub.css"
     },  
-    "plugins": ["prismx", "-highlight","duoshuo","ga","theme-comscore"],
+    "plugins": ["prismx", "-highlight","-search","duoshuo","ga","theme-comscore"],
     "pluginsConfig": {
         "ga": {
             "token": "UA-80700049-1"
